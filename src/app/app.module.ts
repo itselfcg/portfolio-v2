@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent,
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule
