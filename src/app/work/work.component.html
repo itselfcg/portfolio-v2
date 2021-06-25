@@ -1,7 +1,35 @@
-<h1>Work</h1>
-<ul class="nav navbar-nav" routerLinkActive="active">
-  <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="work">Work</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="contact">Contact</a></li>
-</ul>
+<div [@fadeAnimation]="animation ? '' : ''" class="content">
+  <div class="container w-75">
+    <div class="row info">
+      <div class="col-12">
+        <h1>Projects.</h1>
+        <div class="row">
+          <div class="col">
+            <p style="padding: 1rem 20% 0 20%;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              felis augue, porttitor nec sem quis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="btn btn-filter">UX</button>
+    </div>
+
+    <div class="results">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-12">
+          <img src="./assets/img/picture.jpg" />
+          <h4>Lorem ipsum dolor</h4>
+          <button class="btn btn-filter-small">UX</button>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis
+            augue, porttitor nec sem quis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

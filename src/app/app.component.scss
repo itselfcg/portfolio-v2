@@ -1,5 +1,4 @@
-$color-green: #285A3D;
-
+@import './colors.scss';
 
 .navbar {
   padding-top: 4rem;
@@ -10,11 +9,9 @@ $color-green: #285A3D;
   li a {
     padding-left: 2rem;
     font-size: 25px;
-    color: #dddddd;
+    color: $color-md-gray;
   }
 }
-
-
 
 h1 {
   font-style: normal;
@@ -24,20 +21,26 @@ h1 {
 }
 
 h3 {
-  color: #d5d5d5;
+  color: $color-md-gray;
   font-weight: normal;
   font-size: 25px;
   line-height: 30px;
 }
 
-p {
-  color: #afafaf;
-  font-size: 18px;
-  line-height: 26px;
+h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color:$color-gray;
 }
 
- a.navlink {
-  color: #ffffff;
+p {
+  color: $color-lg-gray;
+  font-size: 18px;
+}
+
+a.navlink {
+  color: $color-white;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
