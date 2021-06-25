@@ -1,0 +1,20 @@
+
+.intro{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.content {
+  height: 100vh;
+
+  background-image: url("/assets/img/intro.jpg");
+  background-size: cover;
+}
+
+:host .nav li a {
+  color: white !important;
+}
