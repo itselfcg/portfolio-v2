@@ -20,6 +20,16 @@ h1 {
   line-height: 55px;
 }
 
+h2{
+  font-family: Rubik;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 26px;
+
+color: $color-green;
+}
+
 h3 {
   color: $color-md-gray;
   font-weight: normal;
@@ -40,9 +50,24 @@ p {
 }
 
 a.navlink {
-  color: $color-white;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 16px;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: $color-green !important;
+  color: $color-white !important;
+}
+
+.btn-primary {
+  color: $color-white !important;
+  background-color: $color-green !important;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 16px!important;
+
 }

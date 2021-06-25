@@ -1,12 +1,14 @@
 
-$color-green: #285A3D;
+
+@import '../colors.scss';
+
 .intro{
 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: $color-white;
 }
 
 .content {
@@ -17,5 +19,9 @@ $color-green: #285A3D;
 }
 
 :host .nav li a {
-  color: white !important;
+  color: $color-white!important;
 }
+a.navlink {
+  color: $color-white;
+}
+
