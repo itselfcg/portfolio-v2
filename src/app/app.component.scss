@@ -1,9 +1,13 @@
-@import './colors.scss';
+@import "./colors.scss";
+
+.info {
+  padding-top: 14rem;
+}
 
 .navbar {
   padding-top: 4rem;
   img {
-    width: 75px !important;
+    width: 60px !important;
     height: auto;
   }
   li a {
@@ -14,20 +18,21 @@
 }
 
 h1 {
+  color: $color-green;
   font-style: normal;
   font-weight: bold;
   font-size: 65px;
   line-height: 55px;
 }
 
-h2{
+h2 {
   font-family: Rubik;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 26px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 26px;
 
-color: $color-green;
+  color: $color-green;
 }
 
 h3 {
@@ -41,7 +46,7 @@ h4 {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  color:$color-gray;
+  color: $color-gray;
 }
 
 p {
@@ -53,6 +58,7 @@ a.navlink {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
+  color: $color-gray;
 }
 
 .btn-primary:hover,
@@ -68,6 +74,21 @@ a.navlink {
   background-color: $color-green !important;
   width: 100px;
   border-radius: 10px;
-  font-size: 16px!important;
+  font-size: 16px !important;
+}
 
+.nav-item::after {
+  content: "\25CF";
+  opacity: 0;
+  color: #1ba9b3;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5px;
+  height: 5px;
+}
+
+.navbar > li {
+  display: inline-block;
+  margin: 0 10px;
 }

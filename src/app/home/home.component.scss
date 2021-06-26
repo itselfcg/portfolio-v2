@@ -21,7 +21,12 @@
 :host .nav li a {
   color: $color-white!important;
 }
+
+h1{
+  color: $color-white!important;
+}
+
 a.navlink {
-  color: $color-white;
+  color: $color-white!important;
 }
 
