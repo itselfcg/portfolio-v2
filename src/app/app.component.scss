@@ -11,7 +11,8 @@
     height: auto;
   }
   li a {
-    padding-left: 2rem;
+    width: 100px;
+    text-align: center;
     font-size: 25px;
     color: $color-md-gray;
   }
@@ -77,18 +78,25 @@ a.navlink {
   font-size: 16px !important;
 }
 
-.nav-item::after {
+.nav-item .active:after {
+  width: 90px;
+
+  position: absolute;
   content: "\25CF";
-  opacity: 0;
-  color: #1ba9b3;
+  line-height: 5px;
   display: block;
+  opacity:1;
+
+
   margin-left: auto;
   margin-right: auto;
-  width: 5px;
-  height: 5px;
+
+  color: $color-green !important;
+
 }
 
-.navbar > li {
-  display: inline-block;
-  margin: 0 10px;
+.nav-item .active {
+  font-weight: normal;
+  color: $color-gray !important;
+
 }
