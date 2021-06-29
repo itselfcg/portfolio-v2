@@ -4,7 +4,13 @@
   padding-top: 14rem;
 }
 
+header{
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
 .navbar {
+
   padding-top: 4rem;
   img {
     width: 60px !important;
