@@ -3,74 +3,57 @@ import { Subscription } from 'rxjs';
 
 import { slideInOutAnimation, fadeAnimation } from '../../_animations/index';
 
-import { Project } from '../project.model';
-import { ProjectService } from '../projects.service';
+import { Project } from '../../_models/project.model';
+import { ProjectService } from '../../_services/projects.service';
 
 @Component({
   selector: 'work-app',
   templateUrl: 'work.component.html',
-  styleUrls: [ '../../app.component.scss','work.component.scss'],
+  styleUrls: ['../../app.component.scss', 'work.component.scss'],
   animations: [fadeAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {
   animation = true;
-  private isFiltered: boolean = false;
-
-  filters:string[] = ['All', 'UI', 'NodeJs', 'Angular', 'Laravel', 'Java'];
-  filtersSelected:string[] = [];
-
-  projects: Project[] = [
-    {
-      title: 'First Post',
-      description: "This is the first post's content",
-      preview_picture: 'https://i.ibb.co/DkmmDq7/picture.jpg',
-      labels: ['UX', 'UI'],
-      git_url: 'url_git',
-      preview_url: '',
-      details_url: 'details-url',
-    },
-    {
-      title: 'First Post',
-      description: "This is the first post's content",
-      preview_picture: 'https://i.ibb.co/DkmmDq7/picture.jpg',
-      labels: ['Angular', 'NodeJS'],
-      git_url: 'url_git',
-      preview_url: '',
-      details_url: 'details-url',
-    },
-    {
-      title: 'First Post',
-      description: "This is the first post's content",
-      preview_picture: 'https://i.ibb.co/DkmmDq7/picture.jpg',
-      labels: ['Angular'],
-      git_url: 'url_git',
-      preview_url: 'details-url',
-      details_url: '',
-    },
-    {
-      title: 'First Post',
-      description: "This is the first post's content",
-      preview_picture: 'https://i.ibb.co/DkmmDq7/picture.jpg',
-      labels: ['UX'],
-      git_url: 'url_git',
-      preview_url: 'details-url',
-      details_url: '',
-    },
-    {
-      title: 'First Post',
-      description: "This is the first post's content",
-      preview_picture: 'https://i.ibb.co/DkmmDq7/picture.jpg',
-      labels: ['NodeJS'],
-      git_url: '',
-      preview_url: '',
-      details_url: 'details-url',
-    },
-  ];
   private projectSub: Subscription = new Subscription();
+
+  projects: Project[] = [];
+  filters: string[] = [];
+  filtersSelected: string[] = [];
 
   constructor(public projectService: ProjectService) {}
 
-  isActive(value: string) {
+  ngOnInit() {
+    this.projectService.getProjects();
+    this.projectSub = this.projectService
+      .getPostUpdateListener()
+      .subscribe((projects: Project[]) => {
+        // Assign project from service to local variable
+        this.projects = projects;
+
+        // Add project's labels to filter lists
+        for (var i = 0; i < projects.length; i++) {
+          for (var j = 0; j < projects[i].labels.length; j++) {
+            if (this.filters.indexOf(projects[i].labels[j]) == -1) {
+              this.filters.push(projects[i].labels[j]);
+            }
+          }
+        }
+
+        //Add filter all to the start of our filter list
+        this.filters.unshift('All');
+      });
+  }
+
+  ngOnDestroy() {
+    this.projectSub.unsubscribe();
+  }
+
+  /**
+   * Determines if a value is in the filter-selected to apply an style to filter buttons.\
+   * True if it's in the list, false if not.
+   * @param value The value to locate in the list.
+   */
+  isFilterActive(value: string) {
     if (this.filtersSelected.length > 0) {
       if (
         this.filtersSelected
@@ -88,7 +71,11 @@ export class WorkComponent implements OnInit, OnDestroy {
     return false;
   }
 
-  select(filter: string) {
+  /**
+   * Adds a value to the filters selecteded list or removes a value from it if it's already in it.
+   * @param value The value to locate in the list.
+   */
+  selectFilter(filter: string) {
     if (filter.toLowerCase() !== 'all') {
       if (
         !this.filtersSelected
@@ -98,31 +85,23 @@ export class WorkComponent implements OnInit, OnDestroy {
       ) {
         this.filtersSelected.push(filter);
       } else {
-        this.removeFromList(filter);
+        this.filtersSelected = this.removeFromFilterSelectedList(filter);
       }
     } else {
       this.filtersSelected = [];
     }
   }
 
-  removeFromList(item: string) {
+  /**
+   * Removes a value from the filters selecteded list.
+   * @param value The value to remove in the list.
+   */
+  removeFromFilterSelectedList(item: string) {
+    var list = [...this.filtersSelected];
     const index = this.filtersSelected.indexOf(item);
     if (index > -1) {
-      this.filtersSelected.splice(index, 1);
+      list.splice(index, 1);
     }
-  }
-
-  ngOnInit() {
-     this.projectService.getProjects();
-    this.projectSub = this.projectService
-      .getPostUpdateListener()
-      .subscribe((projects: Project[]) => {
-        this.projects = projects;
-      });
-
-  }
-
-  ngOnDestroy() {
-    this.projectSub.unsubscribe();
+    return list;
   }
 }

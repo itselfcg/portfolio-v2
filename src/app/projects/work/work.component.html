@@ -18,9 +18,9 @@
     <div class="filters">
       <button
         class="btn btn-filter"
-        (click)="select(filter)"
+        (click)="selectFilter(filter)"
         *ngFor="let filter of filters"
-        [class.active]="isActive(filter)"
+        [class.active]="isFilterActive(filter)"
       >
         {{ filter }}
       </button>
