@@ -9,7 +9,7 @@ import { ProjectService } from '../projects.service';
 @Component({
   selector: 'work-app',
   templateUrl: 'work.component.html',
-  styleUrls: ['work.component.scss', '../../app.component.scss'],
+  styleUrls: [ '../../app.component.scss','work.component.scss'],
   animations: [fadeAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {

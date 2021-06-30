@@ -12,6 +12,7 @@ import { WorkComponent } from './projects/work/work.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CaseStudyComponent } from './case-study/case-study.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProjectsFilterPipe
+    ProjectsFilterPipe,
+    CaseStudyComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

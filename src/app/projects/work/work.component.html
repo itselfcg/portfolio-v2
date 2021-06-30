@@ -16,13 +16,22 @@
     </div>
 
     <div class="filters">
-      <button class="btn btn-filter" (click)="select(filter)" *ngFor="let filter of filters" [class.active]="isActive(filter)">{{filter}}</button>
+      <button
+        class="btn btn-filter"
+        (click)="select(filter)"
+        *ngFor="let filter of filters"
+        [class.active]="isActive(filter)"
+      >
+        {{ filter }}
+      </button>
     </div>
 
     <div class="results">
       <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-6 col-6 pb-5"
-         *ngFor="let project of (projects | projectsFilter:filtersSelected)">
+        <div
+          class="col-lg-3 col-md-4 col-sm-6 col-6 pb-5"
+          *ngFor="let project of projects | projectsFilter: filtersSelected"
+        >
           <img src="{{ project.preview_picture }}" />
 
           <h4>{{ project.title }}</h4>
@@ -35,11 +44,15 @@
           <p>
             {{ project.description }}
           </p>
-          <a class="btn btn-primary" *ngIf="project.details_url!=''"> <i class=" fas fa-plus    "></i> Read more</a>
-          <a class="btn btn-primary" *ngIf="project.preview_url!=''"><i class="fas fa-eye    "></i> Preview</a>
-          <a class="btn btn-secondary" *ngIf="project.git_url!=''">
-            <i class="fas fa-code-branch"></i> Git repo</a>
-
+          <a class="btn btn-primary" *ngIf="project.details_url != ''" [routerLink]="['/case-study']">
+            <i class="fas fa-plus"></i> Read more
+          </a>
+          <a class="btn btn-primary" *ngIf="project.preview_url != ''">
+            <i class="fas fa-eye"></i> Preview
+          </a>
+          <a class="btn btn-secondary" *ngIf="project.git_url != ''">
+            <i class="fas fa-code-branch"></i> Git repo
+          </a>
         </div>
       </div>
     </div>
