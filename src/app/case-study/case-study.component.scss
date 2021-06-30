@@ -1,48 +1,41 @@
-@import '../colors.scss';
+@import "../colors.scss";
 
-h1{
 
+section {
+  padding: 4em 0 4em 0;
+}
+
+img {
+  border-radius: 20px;
+}
+
+i {
+  color: $color-green;
+}
+
+p {
+  font-size: 16px;
+}
+
+h1 {
   font-size: 50px;
 }
 
-
-p{
-font-size: 16px;
-
+h2 {
+  margin: 1em 0 1em 0;
 }
 
-
-h4{
-font-style: normal;
-font-weight: normal;
-font-size: 22px;
-color: $color-gray;
+h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  color: $color-gray;
 }
 
-
-
-h5{
+h5 {
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   color: $color-gray;
-
-}
-
-i{
-  color: $color-green;
-
-}
-
-img{
-  border-radius: 20px;
-}
-
-section{
-  padding: 4em 0 4em 0;
-
-  h2{
-    margin: 1em 0 1em 0;
-  }
 }
 
