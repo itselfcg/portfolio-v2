@@ -81,8 +81,17 @@ a.navlink {
   background-color: $color-green !important;
   width: 100px;
   border-radius: 10px;
-  font-size: 16px !important;
+  font-size: 16px ;
 }
+
+
+.btn-secondary {
+  border: 1px solid $color-green ;
+  color: $color-green !important;
+  background-color: transparent !important;
+  border-radius: 10px;
+}
+
 
 .nav-item .active:after {
   width: 90px;

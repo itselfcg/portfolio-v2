@@ -1,0 +1,47 @@
+<div [@fadeAnimation]="animation ? '' : ''" class="content">
+  <div class="container w-75">
+    <div class="row info">
+      <div class="col-12">
+        <div class="row">
+          <div class="col text-center">
+            <h1>Projects.</h1>
+
+            <p style="padding: 1rem 20% 0 20%">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              felis augue, porttitor nec sem quis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="btn btn-filter" (click)="select(filter)" *ngFor="let filter of filters" [class.active]="isActive(filter)">{{filter}}</button>
+    </div>
+
+    <div class="results">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 pb-5"
+         *ngFor="let project of (projects | projectsFilter:filtersSelected)">
+          <img src="{{ project.preview_picture }}" />
+
+          <h4>{{ project.title }}</h4>
+          <button
+            *ngFor="let label of project.labels"
+            class="btn btn-filter-small"
+          >
+            {{ label }}
+          </button>
+          <p>
+            {{ project.description }}
+          </p>
+          <a class="btn btn-primary" *ngIf="project.details_url!=''"> <i class=" fas fa-plus    "></i> Read more</a>
+          <a class="btn btn-primary" *ngIf="project.preview_url!=''"><i class="fas fa-eye    "></i> Preview</a>
+          <a class="btn btn-secondary" *ngIf="project.git_url!=''">
+            <i class="fas fa-code-branch"></i> Git repo</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
