@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
-import { ProjectsFilterPipe } from '../_pipes/pipe.component';
+import { ProjectsFilterPipe } from './_pipes/pipe.component';
 
 
 import { AppComponent } from './app.component';
