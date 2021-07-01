@@ -1,15 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { slideInOutAnimation, fadeAnimation } from '../../_animations/index';
+import { slideInOutAnimation, fadeAnimation } from '../_animations/index';
 
-import { Project } from '../../_models/project.model';
-import { ProjectService } from '../../_services/projects.service';
+import { Project } from '../_models/project.model';
+import { ProjectService } from '../_services/projects.service';
 
 @Component({
   selector: 'work-app',
   templateUrl: 'work.component.html',
-  styleUrls: ['../../app.component.scss', 'work.component.scss'],
+  styleUrls: ['../app.component.scss', 'work.component.scss'],
   animations: [fadeAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {

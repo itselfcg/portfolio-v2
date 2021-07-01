@@ -44,7 +44,7 @@
           <p>
             {{ project.description }}
           </p>
-          <a class="btn btn-primary" *ngIf="project.details_url != ''" [routerLink]="['/case-study']">
+          <a class="btn btn-primary" *ngIf="project.details_url != ''" [routerLink]="['/case-study/'+project.details_url]">
             <i class="fas fa-plus"></i> Read more
           </a>
           <a class="btn btn-primary" *ngIf="project.preview_url != ''">
