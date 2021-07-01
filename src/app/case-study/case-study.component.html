@@ -10,19 +10,15 @@
         <div class="col-md-6 col-sm-12">
           <div class="row">
             <div class="col">
-              <h1>Lorem ipsum dolor sit amet.</h1>
-              <button class="btn btn-filter">Ux</button>
+              <h1>{{ caseStudy.name }}</h1>
             </div>
           </div>
           <div class="row pt-3">
             <div class="col">
-              <h4>Lorem ipsum dolor sit amet</h4>
+              <h4>{{ caseStudy.title }}</h4>
 
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Morbi felis augue, porttitor nec
-                sem quis.
+                {{ caseStudy.summary }}
               </p>
             </div>
           </div>
@@ -31,11 +27,11 @@
               <div class="row">
                 <div class="col">
                   <h2>Rol</h2>
-                  <p>Lorem ipsum</p>
+                  <p>{{ caseStudy.rol }}</p>
                 </div>
                 <div class="col">
                   <h2>Duration</h2>
-                  <p>Lorem ipsum</p>
+                  <p>{{ caseStudy.duration }}</p>
                 </div>
               </div>
             </div>
@@ -44,7 +40,20 @@
         <div class="col-md-6 col-sm-12">
           <div class="row">
             <div class="col">
-              <img class="img-fluid" src="../../assets/img/picture.jpg" />
+              <mdb-carousel
+                class="carousel slide carousel-fade"
+                [animation]="'fade'"
+              >
+                <mdb-carousel-item *ngFor="let picture of caseStudy.pictures">
+                  <div class="view w-100">
+                    <img
+                      class="d-block w-100"
+                      src="{{ picture.url }}"
+                      alt="{{ picture.description }}"
+                    />
+                  </div>
+                </mdb-carousel-item>
+              </mdb-carousel>
             </div>
           </div>
         </div>
@@ -54,34 +63,32 @@
         <div class="col-md-6 col-sm-12">
           <h2>Project Vision</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis
-            augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Morbi felis augue, porttitor nec sem
-            quis.
+            {{ caseStudy.sections[0].description }}
           </p>
         </div>
         <div class="col-md-6 col-sm-12">
           <h2>Challenges</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis
-            augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Morbi felis augue, porttitor nec sem
-            quis.
+            {{ caseStudy.sections[1].description }}
           </p>
         </div>
       </section>
 
       <section id="start" class="row">
-        <div class="col-md-6 col-sm-12 order-1 order-sm-0">
-          <img class="img-fluid" src="../../assets/img/picture.jpg" alt=""/>
+        <div
+          class="col-md col-sm-12 order-1 order-sm-0"
+          *ngIf="caseStudy.sections[2].pictures[0].url !== ''"
+        >
+          <img
+            class="img-fluid"
+            src="{{ caseStudy.sections[2].pictures[0].url }}"
+            alt="{{ caseStudy.sections[2].pictures[0].description }}"
+          />
         </div>
-        <div class="col-md-6 col-sm-12 order-0 order-sm-1">
+        <div class="col-md col-sm-12 order-0 order-sm-1">
           <h2>Starting point</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis
-            augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Morbi felis augue, porttitor nec sem
-            quis.
+            {{ caseStudy.sections[2].description }}
           </p>
         </div>
       </section>
@@ -92,106 +99,116 @@
             <div class="col text-center">
               <h2>Meet the users</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Morbi felis augue, porttitor nec
-                sem quis.
+                {{ caseStudy.sections[3].description }}
               </p>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 col-sm-12 mx-auto">
+            <div
+              class="col-md-6 col-sm-12 mx-auto"
+              *ngFor="let user of caseStudy.users"
+            >
               <div class="row">
                 <div class="col-5">
                   <img
                     class="img-fluid"
-                    src="../../assets/img/picture.jpg"
-                    alt=""
+                    src="{{ user.pictures.url }}"
+                    alt="{{ user.pictures.description }}"
                   />
                 </div>
                 <div class="col-5">
                   <p>
-                    <b>Name:</b> Lorem ipsum<br />
-                    <b>Age:</b> ##<br />
-                    <b>Occupation:</b> Lorem ipsum
+                    <b>Name:</b> {{ user.name }}<br />
+                    <b>Age:</b> {{ user.age }}<br />
+                    <b>Occupation:</b> {{ user.occupation }}
                   </p>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit. Morbi felis augue,
-                    porttitor nec sem quis.
+                    {{ caseStudy.sections[4].description }}
                   </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      <section id="ideation" class="row">
-        <div class="col-md-6 col-sm-12">
+      <section
+        id="ideation"
+        class="row"
+        *ngIf="caseStudy.sections[5].description !== ''"
+      >
+        <div class="col-md col-sm-12">
           <h2>Ideation</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis
-            augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Morbi felis augue, porttitor nec sem
-            quis.
+            {{ caseStudy.sections[5].description }}
           </p>
         </div>
-        <div class="col-md-6 col-sm-12">
-          <img class="img-fluid" src="../../assets/img/picture.jpg" alt=""/>
+        <div
+          class="col-md col-sm-12"
+          *ngIf="caseStudy.sections[5].pictures[0].url !== ''"
+        >
+          <img
+            class="img-fluid"
+            src="{{ caseStudy.sections[5].pictures[0].url }}"
+            alt="{{ caseStudy.sections[5].pictures[0].description }}"
+          />
         </div>
       </section>
 
-      <section id="site-map" class="row">
-        <div class="col-md-6 col-sm-12 order-1 order-sm-0">
-          <img class="img-fluid" src="../../assets/img/picture.jpg" alt=""/>
+      <section
+        id="site-map"
+        class="row"
+        *ngIf="caseStudy.sections[6].description !== ''"
+      >
+        <div
+          class="col-md col-sm-12 order-1 order-sm-0"
+          *ngIf="caseStudy.sections[6].pictures[0].url !== ''"
+        >
+          <img
+            class="img-fluid"
+            src="{{ caseStudy.sections[6].pictures[0].url }}"
+            alt="{{ caseStudy.sections[6].pictures[0].description }}"
+          />
         </div>
-        <div class="col-md-6 col-sm-12 order-0 order-sm-1">
+        <div class="col-md col-sm-12 order-0 order-sm-1">
           <h2>Site map</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis
-            augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Morbi felis augue, porttitor nec sem
-            quis.
+            {{ caseStudy.sections[6].description }}
           </p>
         </div>
       </section>
 
-      <section id="usability-study"  class="row">
+      <section id="usability-study" class="row">
         <div class="col">
           <div class="row">
             <div class="col text-center">
               <h2>Usability Study</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Morbi felis augue, porttitor nec
-                sem quis.
+                {{ caseStudy.sections[7].description }}
               </p>
             </div>
           </div>
           <div class="row" style="padding-top: 4em">
-            <div class="col-md-6 col-sm-12">
+            <div
+              class="col-md-6 col-sm-12"
+              *ngFor="let insight of caseStudy.insights"
+            >
               <div class="row">
                 <div class="col-4 text-center">
-                  <i class="fa fa-question fa-5x"></i>
+                  <i class="{{ insight.icon }} fa-5x"></i>
                 </div>
                 <div class="col-8">
-                  <h5>Lorem ipsum dolor sit</h5>
+                  <h5>{{ insight.title }}</h5>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Morbi felis augue,
+                    {{ insight.description }}
                   </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -201,19 +218,19 @@
             <div class="col text-center">
               <h2>Mockups</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Morbi felis augue, porttitor nec
-                sem quis.
+                {{ caseStudy.sections[8].description }}
               </p>
             </div>
           </div>
-          <div class="row">
+          <div
+            class="row"
+            *ngFor="let picture of caseStudy.sections[8].pictures"
+          >
             <div class="col text-center">
               <img
                 class="img-fluid"
-                src="../../assets/img/picture.jpg"
-                alt=""
+                src="{{ picture.url }}"
+                alt="{{ picture.description }}"
               />
             </div>
           </div>
@@ -225,19 +242,19 @@
             <div class="col text-center">
               <h2>High-fidelity prototype</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Morbi felis augue, porttitor nec
-                sem quis.
+                {{ caseStudy.sections[9].description }}
               </p>
             </div>
           </div>
-          <div class="row">
+          <div
+            class="row"
+            *ngFor="let picture of caseStudy.sections[9].pictures"
+          >
             <div class="col text-center">
               <img
                 class="img-fluid"
-                src="../../assets/img/picture.jpg"
-                alt=""
+                src="{{ picture.url }}"
+                alt="{{ picture.description }}"
               />
             </div>
           </div>
@@ -249,19 +266,19 @@
             <div class="col text-center">
               <h2>Style guide</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Morbi felis augue, porttitor nec
-                sem quis.
+                {{ caseStudy.sections[10].description }}
               </p>
             </div>
           </div>
-          <div class="row">
+          <div
+            class="row"
+            *ngFor="let picture of caseStudy.sections[10].pictures"
+          >
             <div class="col text-center">
               <img
                 class="img-fluid"
-                src="../../assets/img/picture.jpg"
-                alt=""
+                src="{{ picture.url }}"
+                alt="{{ picture.description }}"
               />
             </div>
           </div>

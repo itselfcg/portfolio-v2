@@ -1,8 +1,8 @@
-import { Picture } from './picture.model'
+import { Picture } from './picture.model';
 
 export interface Insight {
-  id:string,
-  title: string,
-  description: string,
-  pictures: Picture
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
 }

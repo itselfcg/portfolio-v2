@@ -20,6 +20,7 @@ export class ProjectService {
         this.projects = postData.projects;
         this.projectUpdated.next([...this.projects]);
       });
+
   }
 
   getPostUpdateListener() {

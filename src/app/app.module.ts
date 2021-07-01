@@ -8,7 +8,7 @@ import { ProjectsFilterPipe } from './_pipes/pipe.component';
 
 
 import { AppComponent } from './app.component';
-import { WorkComponent } from './projects/work/work.component';
+import { WorkComponent } from './work/work.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
