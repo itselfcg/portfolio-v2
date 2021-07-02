@@ -13,9 +13,9 @@ export class CaseStudyService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  getCaseStudy(id: string) {
-    return this.http.get<{status:string, message: string; caseStudy: CaseStudy}>
-    ('http://localhost:3000/api/cases/'+id);
+  getCaseStudy(language:string,id: string) {
+    return this.http.get<{ caseStudy: CaseStudy}>
+    ('http://localhost:3000/api/cases/'+language+'/'+id, { observe: 'response' });
   }
 
 

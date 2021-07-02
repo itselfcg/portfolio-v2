@@ -16,7 +16,8 @@ import { Router } from '@angular/router';
 export class CaseStudyComponent {
   public animation = true;
   private caseId: string = '';
-  public caseStudy!: CaseStudy;
+  public caseStudy={} as CaseStudy;
+  isLoading = false;
 
   constructor(
     public router: Router,
@@ -25,21 +26,22 @@ export class CaseStudyComponent {
   ) {}
 
   ngOnInit() {
+    this.isLoading=true;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('id')) {
         this.caseId = paramMap.get('id') || '';
+        var language = localStorage.getItem('language')!;
         this.caseStudyService
-          .getCaseStudy(this.caseId)
+          .getCaseStudy(language, this.caseId)
           .subscribe((postData) => {
-            if (postData.status === '200') {
-              this.caseStudy = postData.caseStudy;
+            if (postData.status === 200) {
+              if (postData.body !== null) {
+                this.caseStudy = postData.body.caseStudy;
+                this.isLoading=false;
 
-
-
-
+                console.log(this.caseStudy);
+              }
             } else {
-              console.log(postData.caseStudy);
-
               this.router.navigate(['/work']);
             }
           });

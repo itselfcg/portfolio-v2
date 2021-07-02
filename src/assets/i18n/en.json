@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "projects": "Work",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "greet": "Hi!",
+    "presentation": "I'm Itzel.",
+    "subtitle": "A software developer based in Mexico",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+  },
+  "about": {
+    "title": "Nice to meet you.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis.",
+    "education": "Education",
+    "educationDescription": "Universidad Autónoma de Baja California, Computer Engineering. December 2019",
+    "skills": "Skills",
+    "feature": "Feature"
+
+  },
+  "work": {
+    "title": "Projects.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+  },
+  "contact": {
+    "title": "Let’t talk.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+  },
+  "nav": {
+    "about": "About",
+    "contact": "Contact",
+    "resume": "Resume",
+    "readmore": "Read more",
+    "view": "View",
+    "return": "Back to Projects",
+    "all":"All"
+
+  }
+}

@@ -2,37 +2,33 @@
   <div class="container w-75">
     <div class="row info">
       <div class="col-md-5 offset-md-1 col-sm-12">
-        <h1>Nice to meet you.</h1>
+        <h1>{{ "about.title" | translate }}</h1>
         <div class="row">
           <div class="col">
             <p style="padding: 1rem 0 0 0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit. Morbi felis augue, porttitor nec sem
-              quis.
+              {{ "about.description" | translate }}
             </p>
           </div>
         </div>
         <a class="btn btn-primary" target="_blank"
-        href="https://docs.google.com/document/d/1HPH85UjV1OXGygrM2h3WuIlHTQrrJQErvWaIYiRHCM0/edit?usp=sharing" style="margin-right: 1rem;"> Resume </a>
+        href="https://docs.google.com/document/d/1HPH85UjV1OXGygrM2h3WuIlHTQrrJQErvWaIYiRHCM0/edit?usp=sharing" style="margin-right: 1rem;"> {{ "nav.resume" | translate }}  </a>
         <a class="navlink" [routerLink]="[ '../', 'contact' ]">
-          Contact &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+          {{ "nav.contact" | translate }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
       <div class="col-md-5 offset-md-1 col-sm-12 pt-5 pt-md-0">
         <div class="row">
           <div class="col">
-            <h2>Education</h2>
+            <h2>{{ "about.education" | translate }}</h2>
             <p>
-              Universidad Autónoma de Baja California Computer Engineering
-              December 2019
+              {{ "about.educationDescription" | translate }}
             </p>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <h2>Skills</h2>
+            <h2>{{ "about.skills" | translate }}</h2>
             <p>
               Java, C, PHP, JavaScript, SQLServer, MySql, PostgreSQL, Hibernate,
               Spring boot, Html, Css, JSF, Bootstrap 4, Agile Methodologies, UI
@@ -43,7 +39,7 @@
 
         <div class="row">
           <div class="col">
-            <h2>Feature</h2>
+            <h2>{{ "about.feature" | translate }}</h2>
             <p>
               Agile Business Analysis: Getting / Writing Lean Requirements,
               Responsive web design , Introduction to hibernate and java spring,

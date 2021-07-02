@@ -11,10 +11,10 @@ export class ProjectService {
 
   constructor(private http: HttpClient) {}
 
-  getProjects() {
+  getProjects(language:string) {
     this.http
       .get<{ message: string; projects: Project[] }>(
-        "http://localhost:3000/api/projects"
+        "http://localhost:3000/api/projects/"+language
       )
       .subscribe(postData => {
         this.projects = postData.projects;

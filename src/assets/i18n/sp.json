@@ -1,0 +1,38 @@
+{
+  "navbar": {
+    "projects": "Proyectos",
+    "about": "Sobre",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greet": "¡Hola!",
+    "presentation": "Soy Itzel.",
+    "subtitle": "Una desarolladora de software mexicana",
+    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+  },
+  "about": {
+    "title": "Mucho gusto.",
+    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis.",
+    "education": "Educación",
+    "educationDescription": "Universidad Autónoma de Baja California, Ingenieria en Computación. Diciembre 2019",
+    "skills": "Habilidades",
+    "feature": "Cursos"
+  },
+  "work": {
+    "title": "Proyectos.",
+    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+  },
+  "contact": {
+    "title": "Hablemos.",
+    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+  },
+  "nav": {
+    "about": "Sobre mi",
+    "contact": "Contacto",
+    "resume": "CV",
+    "readmore": "Leer más",
+    "view": "Ver",
+    "return": "Regresar a Proyectos",
+    "all": "Todos"
+  }
+}

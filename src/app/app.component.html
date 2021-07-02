@@ -4,10 +4,27 @@
       <img src="assets/img/logo.png" />
     </a>
     <ul id="nav-menu" class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" [routerLink]="['work']" [routerLinkActive]="['active']">Work</a></li>
-      <li class="nav-item"><a class="nav-link" [routerLink]="['about']" [routerLinkActive]="['active']">About</a></li>
-      <li class="nav-item"><a class="nav-link" [routerLink]="['contact']" [routerLinkActive]="['active']">Contact</a></li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['work']" [routerLinkActive]="['active']">{{"navbar.projects"|translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['about']" [routerLinkActive]="['active']">{{"navbar.about"|translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['contact']" [routerLinkActive]="['active']">{{"navbar.contact"|translate}}</a>
+      </li>
     </ul>
   </nav>
 </header>
 <router-outlet></router-outlet>
+
+<!-- Footer -->
+<div class="container w-75">
+  <div class="position-relative">
+    <div class="footer">
+      <button class="btn languagelink" (click)="useLanguage('en')">EN</button><span class="text-white">/</span>
+      <button class="btn languagelink" (click)="useLanguage('sp')">SP</button>
+
+    </div>
+  </div>
+</div>

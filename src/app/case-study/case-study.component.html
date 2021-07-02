@@ -1,16 +1,21 @@
 <div [@fadeAnimation]="animation ? '' : ''" class="content">
-  <div class="container w-75">
+  <div class="container w-75" *ngIf="caseStudy.sections != null && !isLoading">
     <div class="info">
       <a class="navlink" [routerLink]="['/work']">
         <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        Back to Projects</a
+        {{ "nav.return" | translate }}</a
       >
 
       <div class="row pt-4">
         <div class="col-md-6 col-sm-12">
           <div class="row">
             <div class="col">
-              <h1>{{ caseStudy.name }}</h1>
+              <h1>{{ caseStudy.project.name }}</h1>
+              <button
+              class="btn btn-filter"
+              *ngFor="let label of caseStudy.project.labels">
+              {{ label }}
+            </button>
             </div>
           </div>
           <div class="row pt-3">
@@ -18,7 +23,7 @@
               <h4>{{ caseStudy.title }}</h4>
 
               <p>
-                {{ caseStudy.summary }}
+                {{ caseStudy.content }}
               </p>
             </div>
           </div>
@@ -26,12 +31,12 @@
             <div class="col">
               <div class="row">
                 <div class="col">
-                  <h2>Rol</h2>
-                  <p>{{ caseStudy.rol }}</p>
+                  <h2>{{ caseStudy.sections.rol.title }}</h2>
+                  <p>{{ caseStudy.sections.rol.content }}</p>
                 </div>
                 <div class="col">
-                  <h2>Duration</h2>
-                  <p>{{ caseStudy.duration }}</p>
+                  <h2>{{ caseStudy.sections.duration.title }}</h2>
+                  <p>{{ caseStudy.sections.duration.content }}</p>
                 </div>
               </div>
             </div>
@@ -59,17 +64,17 @@
         </div>
       </div>
 
-      <section id="vision-chall" class="row">
+          <section id="vision-chall" class="row">
         <div class="col-md-6 col-sm-12">
-          <h2>Project Vision</h2>
+          <h2>{{ caseStudy.sections.vision.title}}</h2>
           <p>
-            {{ caseStudy.sections[0].description }}
+            {{ caseStudy.sections.vision.content }}
           </p>
         </div>
         <div class="col-md-6 col-sm-12">
-          <h2>Challenges</h2>
+          <h2>{{ caseStudy.sections.challenges.title}}</h2>
           <p>
-            {{ caseStudy.sections[1].description }}
+            {{ caseStudy.sections.challenges.content }}
           </p>
         </div>
       </section>
@@ -77,18 +82,18 @@
       <section id="start" class="row">
         <div
           class="col-md col-sm-12 order-1 order-sm-0"
-          *ngIf="caseStudy.sections[2].pictures[0].url !== ''"
+          *ngIf="caseStudy.sections.start.pictures[0].url !== ''"
         >
           <img
             class="img-fluid"
-            src="{{ caseStudy.sections[2].pictures[0].url }}"
-            alt="{{ caseStudy.sections[2].pictures[0].description }}"
+            src="{{ caseStudy.sections.start.pictures[0].url }}"
+            alt="{{ caseStudy.sections.start.pictures[0].description }}"
           />
         </div>
         <div class="col-md col-sm-12 order-0 order-sm-1">
-          <h2>Starting point</h2>
+          <h2> {{ caseStudy.sections.start.title }}</h2>
           <p>
-            {{ caseStudy.sections[2].description }}
+            {{ caseStudy.sections.start.content }}
           </p>
         </div>
       </section>
@@ -97,9 +102,9 @@
         <div class="col">
           <div class="row">
             <div class="col text-center">
-              <h2>Meet the users</h2>
+              <h2>{{ caseStudy.sections.user.title}}</h2>
               <p>
-                {{ caseStudy.sections[3].description }}
+                {{ caseStudy.sections.user.content }}
               </p>
             </div>
           </div>
@@ -127,7 +132,7 @@
               <div class="row">
                 <div class="col">
                   <p>
-                    {{ caseStudy.sections[4].description }}
+                    {{ caseStudy.sections.start.content }}
                   </p>
                 </div>
               </div>
@@ -136,25 +141,27 @@
         </div>
       </section>
 
+
+
       <section
         id="ideation"
         class="row"
-        *ngIf="caseStudy.sections[5].description !== ''"
+        *ngIf="caseStudy.sections.ideation.content !== ''"
       >
         <div class="col-md col-sm-12">
-          <h2>Ideation</h2>
+          <h2> {{ caseStudy.sections.ideation.title }}</h2>
           <p>
-            {{ caseStudy.sections[5].description }}
+            {{ caseStudy.sections.ideation.content }}
           </p>
         </div>
         <div
           class="col-md col-sm-12"
-          *ngIf="caseStudy.sections[5].pictures[0].url !== ''"
+          *ngIf="caseStudy.sections.ideation.pictures[0].url !== ''"
         >
           <img
             class="img-fluid"
-            src="{{ caseStudy.sections[5].pictures[0].url }}"
-            alt="{{ caseStudy.sections[5].pictures[0].description }}"
+            src="{{ caseStudy.sections.ideation.pictures[0].url }}"
+            alt="{{ caseStudy.sections.ideation.pictures[0].description }}"
           />
         </div>
       </section>
@@ -162,22 +169,22 @@
       <section
         id="site-map"
         class="row"
-        *ngIf="caseStudy.sections[6].description !== ''"
+        *ngIf="caseStudy.sections.sitemap.content !== ''"
       >
         <div
           class="col-md col-sm-12 order-1 order-sm-0"
-          *ngIf="caseStudy.sections[6].pictures[0].url !== ''"
+          *ngIf="caseStudy.sections.sitemap.pictures[0].url !== ''"
         >
           <img
             class="img-fluid"
-            src="{{ caseStudy.sections[6].pictures[0].url }}"
-            alt="{{ caseStudy.sections[6].pictures[0].description }}"
+            src="{{ caseStudy.sections.sitemap.pictures[0].url }}"
+            alt="{{ caseStudy.sections.sitemap.pictures[0].description }}"
           />
         </div>
         <div class="col-md col-sm-12 order-0 order-sm-1">
           <h2>Site map</h2>
           <p>
-            {{ caseStudy.sections[6].description }}
+            {{ caseStudy.sections.sitemap.content }}
           </p>
         </div>
       </section>
@@ -186,9 +193,9 @@
         <div class="col">
           <div class="row">
             <div class="col text-center">
-              <h2>Usability Study</h2>
+              <h2>{{ caseStudy.sections.usabilityStudy.title }}</h2>
               <p>
-                {{ caseStudy.sections[7].description }}
+                {{ caseStudy.sections.usabilityStudy.content }}
               </p>
             </div>
           </div>
@@ -204,7 +211,7 @@
                 <div class="col-8">
                   <h5>{{ insight.title }}</h5>
                   <p>
-                    {{ insight.description }}
+                    {{ insight.content }}
                   </p>
                 </div>
               </div>
@@ -216,15 +223,15 @@
         <div class="col">
           <div class="row">
             <div class="col text-center">
-              <h2>Mockups</h2>
+              <h2>{{ caseStudy.sections.mockups.title }}</h2>
               <p>
-                {{ caseStudy.sections[8].description }}
+                {{ caseStudy.sections.mockups.content }}
               </p>
             </div>
           </div>
           <div
             class="row"
-            *ngFor="let picture of caseStudy.sections[8].pictures"
+            *ngFor="let picture of caseStudy.sections.mockups.pictures"
           >
             <div class="col text-center">
               <img
@@ -240,15 +247,15 @@
         <div class="col">
           <div class="row">
             <div class="col text-center">
-              <h2>High-fidelity prototype</h2>
+              <h2>{{ caseStudy.sections.prototypes.title }}</h2>
               <p>
-                {{ caseStudy.sections[9].description }}
+                {{ caseStudy.sections.prototypes.content }}
               </p>
             </div>
           </div>
           <div
             class="row"
-            *ngFor="let picture of caseStudy.sections[9].pictures"
+            *ngFor="let picture of caseStudy.sections.prototypes.pictures"
           >
             <div class="col text-center">
               <img
@@ -264,15 +271,15 @@
         <div class="col">
           <div class="row">
             <div class="col text-center">
-              <h2>Style guide</h2>
+              <h2>{{ caseStudy.sections.styleGuide.title }}</h2>
               <p>
-                {{ caseStudy.sections[10].description }}
+                {{ caseStudy.sections.styleGuide.content }}
               </p>
             </div>
           </div>
           <div
             class="row"
-            *ngFor="let picture of caseStudy.sections[10].pictures"
+            *ngFor="let picture of caseStudy.sections.styleGuide.pictures"
           >
             <div class="col text-center">
               <img

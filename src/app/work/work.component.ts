@@ -15,7 +15,7 @@ import { ProjectService } from '../_services/projects.service';
 export class WorkComponent implements OnInit, OnDestroy {
   animation = true;
   private projectSub: Subscription = new Subscription();
-
+  language = localStorage.getItem('language');
   projects: Project[] = [];
   filters: string[] = [];
   filtersSelected: string[] = [];
@@ -23,13 +23,15 @@ export class WorkComponent implements OnInit, OnDestroy {
   constructor(public projectService: ProjectService) {}
 
   ngOnInit() {
-    this.projectService.getProjects();
+
+
+    this.projectService.getProjects(this.language!);
     this.projectSub = this.projectService
       .getPostUpdateListener()
       .subscribe((projects: Project[]) => {
-        // Assign project from service to local variable
+        // Assign project from service to local variable. Filter the text by laguage accordint to the actual laguange
         this.projects = projects;
-
+        console.log(projects);
         // Add project's labels to filter lists
         for (var i = 0; i < projects.length; i++) {
           for (var j = 0; j < projects[i].labels.length; j++) {

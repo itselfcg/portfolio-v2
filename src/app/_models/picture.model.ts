@@ -1,6 +1,5 @@
+
 export interface Picture {
-  id:string,
-  title: string,
-  description: string,
-  url: string
+  url: string,
+  description: string
 }

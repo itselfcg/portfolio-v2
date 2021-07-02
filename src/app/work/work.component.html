@@ -4,11 +4,10 @@
       <div class="col-12">
         <div class="row">
           <div class="col text-center">
-            <h1>Projects.</h1>
+            <h1>{{ "work.title" | translate }}</h1>
 
             <p style="padding: 1rem 20% 0 20%">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-              felis augue, porttitor nec sem quis.
+              {{ "work.description" | translate }}
             </p>
           </div>
         </div>
@@ -32,7 +31,7 @@
           class="col-lg-3 col-md-4 col-sm-6 col-6 pb-5"
           *ngFor="let project of projects | projectsFilter: filtersSelected"
         >
-          <img src="{{ project.preview_picture }}" />
+          <img  src="{{ project.picture.url}}" alt="{{project.picture.description }}"/>
 
           <h4>{{ project.title }}</h4>
           <button
@@ -42,13 +41,13 @@
             {{ label }}
           </button>
           <p>
-            {{ project.description }}
+            {{ project.content }}
           </p>
-          <a class="btn btn-primary" *ngIf="project.details_url != ''" [routerLink]="['/case-study/'+project.details_url]">
-            <i class="fas fa-plus"></i> Read more
+          <a class="btn btn-primary" *ngIf="project.details_url != ''" [routerLink]="['/case-study/'+project._id]">
+            <i class="fas fa-plus"></i> {{ "nav.readmore" | translate }}
           </a>
           <a class="btn btn-primary" *ngIf="project.preview_url != ''">
-            <i class="fas fa-eye"></i> Preview
+            <i class="fas fa-eye"></i> {{ "nav.view" | translate }}
           </a>
           <a class="btn btn-secondary" *ngIf="project.git_url != ''">
             <i class="fas fa-code-branch"></i> Git repo
