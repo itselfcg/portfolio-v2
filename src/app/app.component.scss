@@ -3,14 +3,9 @@ $space: 2px;
 $small: 1;
 $medium: 4;
 $large: 8;
-html {
-  width: 100vw;
-}
-body {
-  overflow-x: hidden;
-}
-.info {
-  padding-top: 14rem;
+
+.content {
+  padding: 14em 0 4em 0;
 }
 
 header {
@@ -139,25 +134,4 @@ a.navlink {
   font-weight: normal;
   font-size: 16px;
   color: $color-gray;
-}
-
-button.languagelink {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  color: $color-white;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 7rem;
-}
-
-
-.btn:focus, .btn:active {
-  outline: none !important;
-  box-shadow: none !important;
-  border-bottom: 1.5px solid white;
-  border-radius: 0;
 }

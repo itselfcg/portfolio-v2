@@ -1,18 +1,40 @@
-<div [@fadeAnimation]="animation ? '' : ''" class="content">
-  <div class="container w-75">
-    <div class="row intro">
-      <div class="col-md-9 col-12">
-        <h1>
-          {{ "home.greet" | translate }} <br>  {{ "home.presentation" | translate }}
-        </h1>
-        <h3>{{ "home.subtitle" | translate }}</h3>
-        <p>
-          {{ "home.description" | translate }}
-        </p>
+<div [@fadeAnimation]="animation ? '' : ''" class="background">
+  <div class="content">
+    <div class="container w-75">
+      <div class="row">
+        <div class="col-md-6 offset-md-1 col-sm-12">
+          <h1>
+            {{ "home.greet" | translate }} <br />
+            {{ "home.presentation" | translate }}
+          </h1>
+          <h3>{{ "home.subtitle" | translate }}</h3>
+          <p>
+            {{ "home.description" | translate }}
+          </p>
 
-        <a class="navlink" [routerLink]="['about']">
-          {{ "nav.about" | translate }} &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
-        </a>
+          <a class="navlink" [routerLink]="['about']">
+            {{ "nav.about" | translate }} &nbsp;<i
+              class="fa fa-arrow-right"
+              aria-hidden="true"
+            ></i>
+          </a>
+        </div>
+      </div>
+      <!-- Language options -->
+
+      <div class="row">
+        <div class="col w-100">
+          <div class="language">
+            <div class="float-right">
+              <button class="btn langlink" (click)="useLanguage('en')">
+                EN</button
+              ><span class="text-white">/</span>
+              <button class="btn langlink" (click)="useLanguage('sp')">
+                SP
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

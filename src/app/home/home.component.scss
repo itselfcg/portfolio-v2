@@ -2,17 +2,9 @@
 
 @import '../colors.scss';
 
-.intro{
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: $color-white;
-}
-
-.content {
-  height: 100vh;
+.background {
+  min-height: 100vh;
   background-color: $color-green;
   background-image: url("/assets/img/intro.jpg");
   background-size: cover;
@@ -30,4 +22,23 @@ a.navlink {
   color: $color-white!important;
 }
 
+
+
+.language {
+  padding:6em 0 3em 0;
+
+  .btn {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: $color-white;
+  }
+  .btn:focus,.btn:active {
+    outline: none;
+    box-shadow: none ;
+    border-bottom: 1.5px solid white;
+    border-radius: 0;
+  }
+
+}
 
