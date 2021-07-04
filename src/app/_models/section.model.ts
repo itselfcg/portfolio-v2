@@ -21,7 +21,7 @@ export interface Section {
   };
   challenges: {
     title: string;
-    content: string;
+    list: string[];
     pictures: [
       {
         url: string;
@@ -32,6 +32,7 @@ export interface Section {
   start: {
     title: string;
     content: string;
+    questions: string[];
     pictures: [
       {
         url: string;
@@ -122,4 +123,5 @@ export interface Section {
       }
     ];
   };
+
 }

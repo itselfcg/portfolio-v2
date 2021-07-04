@@ -39,3 +39,24 @@ h5 {
   color: $color-gray;
 }
 
+.mockup{
+  max-height: 400px;
+  width: auto;
+max-width: 100%;
+}
+
+.pictures{
+  padding-top: 1rem;
+}
+
+li {
+  color: $color-md-gray;
+  font-weight: 400;
+
+}
+
+span {
+  color: $color-lg-gray;
+  font-size: 16px;
+  font-weight: 300;
+}
