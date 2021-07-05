@@ -128,7 +128,7 @@
             <div class="row">
               <div class="col-5">
                 <img
-                  class="img-fluid"
+                  class="w-100"
                   src="{{ user.pictures.url }}"
                   alt="{{ user.pictures.description }}"
                 />
@@ -156,7 +156,7 @@
     <section id="ideation" class="row">
       <div
         *ngIf="caseStudy.sections.ideation.content !== ''"
-        class="col-md col-sm-12"
+        class="col-md-6 col-sm-12"
       >
         <h2>{{ caseStudy.sections.ideation.title }}</h2>
         <p>
@@ -164,7 +164,7 @@
         </p>
       </div>
       <div
-        class="col-md col-sm-12"
+        class="col-md-6 col-sm-12"
         *ngIf="caseStudy.sections.ideation.pictures.length > 0"
       >
         <img
@@ -173,9 +173,8 @@
           alt="{{ caseStudy.sections.ideation.pictures[0].description }}"
         />
       </div>
-
       <div
-        class="col-md col-sm-12 order-1 order-sm-0"
+        class="col-md-6 col-sm-12 order-1 order-sm-0"
         *ngIf="caseStudy.sections.sitemap.pictures.length > 0"
       >
         <img
@@ -186,7 +185,7 @@
       </div>
       <div
         *ngIf="caseStudy.sections.sitemap.content !== ''"
-        class="col-md col-sm-12 order-0 order-sm-1"
+        class="col-md-6 col-sm-12 order-0 order-sm-1"
       >
         <h2>Site map</h2>
         <p>
