@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { slideInOutAnimation, fadeAnimation } from '../_animations/index';
+import { inOutAnimation, fadeAnimation } from '../_animations/index';
 
 import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
@@ -10,7 +10,7 @@ import { ProjectService } from '../_services/projects.service';
   selector: 'work-app',
   templateUrl: 'work.component.html',
   styleUrls: ['../app.component.scss', 'work.component.scss'],
-  animations: [fadeAnimation],
+  animations: [fadeAnimation,inOutAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {
   animation = true;
@@ -19,12 +19,12 @@ export class WorkComponent implements OnInit, OnDestroy {
   projects: Project[] = [];
   filters: string[] = [];
   filtersSelected: string[] = [];
+  isLoading = false;
 
   constructor(public projectService: ProjectService) {}
 
   ngOnInit() {
-
-
+    this.isLoading = true;
     this.projectService.getProjects(this.language!);
     this.projectSub = this.projectService
       .getPostUpdateListener()
@@ -41,10 +41,17 @@ export class WorkComponent implements OnInit, OnDestroy {
           }
         }
 
+
+
         //Add filter all to the start of our filter list
         this.filters.unshift('All');
+
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 500);
       });
   }
+
 
   ngOnDestroy() {
     this.projectSub.unsubscribe();

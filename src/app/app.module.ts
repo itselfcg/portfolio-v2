@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CaseStudyComponent } from './case-study/case-study.component';
+import { LoadingComponent } from './states/loading.component';
 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -25,7 +26,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     AboutComponent,
     ContactComponent,
     ProjectsFilterPipe,
-    CaseStudyComponent
+    CaseStudyComponent,
+    LoadingComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

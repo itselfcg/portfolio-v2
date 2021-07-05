@@ -4,14 +4,14 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CaseStudy } from '../_models/case-study.model';
 import { CaseStudyService } from '../_services/case-study.service';
 
-import { fadeAnimation } from '../_animations/index';
+import { fadeAnimation, inOutAnimation } from '../_animations/index';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'case-study-app',
   templateUrl: './case-study.component.html',
   styleUrls: ['../app.component.scss', './case-study.component.scss'],
-  animations: [fadeAnimation],
+  animations: [fadeAnimation, inOutAnimation],
 })
 export class CaseStudyComponent {
   public animation = true;
@@ -35,7 +35,9 @@ export class CaseStudyComponent {
           (result) => {
             if (result.body != null) {
               this.caseStudy = result.body.caseStudy;
-              this.isLoading = false;
+              setTimeout(() => {
+                this.isLoading = false;
+              }, 500);
             }
           },
           (error) => {

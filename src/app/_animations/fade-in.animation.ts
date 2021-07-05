@@ -1,9 +1,14 @@
-import { trigger, state, animate, transition, style } from '@angular/animations';
+import {
+  trigger,
+  state,
+  animate,
+  transition,
+  style,
+} from '@angular/animations';
 
-export const fadeAnimation =
-trigger('fadeAnimation', [
+export const fadeAnimation = trigger('fadeAnimation', [
   transition('* => *', [
     style({ opacity: 0 }),
-    animate(1000, style({ opacity: 1 }))
+    animate(1000, style({ opacity: 1 })),
   ]),
 ]);

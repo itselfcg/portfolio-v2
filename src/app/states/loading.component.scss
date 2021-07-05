@@ -1,0 +1,13 @@
+
+
+@import '../colors.scss';
+
+.loading {
+  z-index: 100;
+  min-height: 100vh;
+  background-color: $color-green;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
