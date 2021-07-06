@@ -5,6 +5,7 @@ import { inOutAnimation, fadeAnimation } from '../_animations/index';
 
 import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
+import { NavbarService } from '../_services/navbar.service';
 
 @Component({
   selector: 'work-app',
@@ -21,9 +22,10 @@ export class WorkComponent implements OnInit, OnDestroy {
   filtersSelected: string[] = [];
   isLoading = false;
 
-  constructor(public projectService: ProjectService) {}
+  constructor(public projectService: ProjectService,public nav: NavbarService ) {}
 
   ngOnInit() {
+    this.nav.hide();
     this.isLoading = true;
     this.projectService.getProjects(this.language!);
     this.projectSub = this.projectService
@@ -41,12 +43,11 @@ export class WorkComponent implements OnInit, OnDestroy {
           }
         }
 
-
-
         //Add filter all to the start of our filter list
         this.filters.unshift('All');
 
         setTimeout(() => {
+          this.nav.show();
           this.isLoading = false;
         }, 500);
       });

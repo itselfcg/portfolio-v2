@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CaseStudyComponent } from './case-study/case-study.component';
 import { LoadingComponent } from './states/loading.component';
+import { NavbarComponent } from './header/navbar.component';
 
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -27,7 +28,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     ContactComponent,
     ProjectsFilterPipe,
     CaseStudyComponent,
-    LoadingComponent
+    LoadingComponent,
+    NavbarComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

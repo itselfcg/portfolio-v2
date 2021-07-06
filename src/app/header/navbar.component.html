@@ -1,0 +1,33 @@
+<header *ngIf="nav.visible">
+  <nav class="navbar navbar-expand navbar-light container w-75">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="assets/img/logo.png" />
+    </a>
+    <ul id="nav-menu" class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['work']"
+          [routerLinkActive]="['active']"
+          >{{ "navbar.projects" | translate }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['about']"
+          [routerLinkActive]="['active']"
+          >{{ "navbar.about" | translate }}</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['contact']"
+          [routerLinkActive]="['active']"
+          >{{ "navbar.contact" | translate }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

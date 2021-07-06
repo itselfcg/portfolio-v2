@@ -6,6 +6,7 @@ import { CaseStudyService } from '../_services/case-study.service';
 
 import { fadeAnimation, inOutAnimation } from '../_animations/index';
 import { Router } from '@angular/router';
+import { NavbarService } from '../_services/navbar.service';
 
 @Component({
   selector: 'case-study-app',
@@ -23,9 +24,11 @@ export class CaseStudyComponent {
     public router: Router,
     public caseStudyService: CaseStudyService,
     public route: ActivatedRoute
+    ,public nav: NavbarService
   ) {}
 
   ngOnInit() {
+    this.nav.hide();
     this.isLoading = true;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('id')) {
@@ -37,6 +40,7 @@ export class CaseStudyComponent {
               this.caseStudy = result.body.caseStudy;
               setTimeout(() => {
                 this.isLoading = false;
+                this.nav.show();
               }, 500);
             }
           },
