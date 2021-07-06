@@ -6,13 +6,14 @@
   },
   "home": {
     "greet": "Hi!",
-    "presentation": "I'm Itzel.",
-    "subtitle": "A software developer based in Mexico",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+    "presentation": "I’m Itzel.",
+    "subtitle": "A full-stack developer based in Mexico.",
+    "description": "I’m passionate about improving, I enjoy experimenting with technologies to surpass myself everyday. I’m excited you’re here, take a look at everything!"
   },
   "about": {
     "title": "Nice to meet you.",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis.",
+    "subtitle": "I’m a full-stack developer, currently learning about Angular.",
+    "description": "My career purpose is to create solutions for the modern age that will have a positive impact on someone’s life.",
     "education": "Education",
     "educationDescription": "Universidad Autónoma de Baja California, Computer Engineering. December 2019",
     "skills": "Skills",
@@ -21,14 +22,16 @@
   },
   "work": {
     "title": "Projects.",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+    "description": "These projects are the result of courses, certifications, or just me trying to prove to myself that I can accomplish a goal."
   },
   "contact": {
     "title": "Let’t talk.",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+    "subtitle": "Comments? Feedback?",
+    "description": "Feel free to contact me, I’m always open to learning new things."
   },
   "nav": {
     "about": "About",
+    "work": "Projects",
     "contact": "Contact",
     "resume": "Resume",
     "readmore": "Read more",

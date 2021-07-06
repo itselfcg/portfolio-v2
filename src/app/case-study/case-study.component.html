@@ -159,7 +159,7 @@
 
       <section id="ideation" class="row">
         <div
-          *ngIf="caseStudy.sections.ideation.content !== ''"
+          *ngIf="caseStudy.sections.ideation.content"
           class="col-md-6 col-sm-12"
         >
           <h2>{{ caseStudy.sections.ideation.title }}</h2>
@@ -188,15 +188,64 @@
           />
         </div>
         <div
-          *ngIf="caseStudy.sections.sitemap.content !== ''"
+          *ngIf="caseStudy.sections.sitemap.content"
           class="col-md-6 col-sm-12 order-0 order-sm-1"
         >
-          <h2>Site map</h2>
+          <h2>{{ caseStudy.sections.sitemap.title }}</h2>
           <p>
             {{ caseStudy.sections.sitemap.content }}
           </p>
         </div>
+
+        <div
+          class="col-md-6 col-sm-12 order-1 order-sm-0"
+          *ngIf="caseStudy.sections.journey.pictures.length > 0"
+        >
+          <img
+            class="img-fluid"
+            src="{{ caseStudy.sections.journey.pictures[0].url }}"
+            alt="{{ caseStudy.sections.journey.pictures[0].description }}"
+          />
+        </div>
+        <div
+          *ngIf="caseStudy.sections.journey.content"
+          class="col-md-6 col-sm-12 order-0 order-sm-1"
+        >
+          <h2>{{ caseStudy.sections.journey.title }}</h2>
+          <p>
+            {{ caseStudy.sections.journey.content }}
+          </p>
+        </div>
       </section>
+
+
+
+      <section id="wireframes" class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col text-center">
+              <h2>{{ caseStudy.sections.wireframes.title }}</h2>
+              <p>
+                {{ caseStudy.sections.wireframes.content }}
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="row"
+            *ngFor="let picture of caseStudy.sections.wireframes.pictures"
+          >
+            <div class="col text-center pictures">
+              <img
+                class="img-fluid"
+                src="{{ picture.url }}"
+                alt="{{ picture.description }}"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section id="usability-study" class="row">
         <div class="col">
@@ -210,7 +259,7 @@
           </div>
           <div class="row" style="padding-top: 4em">
             <div
-              class="col-md-6 col-sm-12"
+              class="col-md-6 col-sm-12 mt-3"
               *ngFor="let insight of caseStudy.insights"
             >
               <div class="row">
@@ -224,6 +273,19 @@
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div
+            class="row"
+            *ngFor="let picture of caseStudy.sections.usabilityStudy.pictures"
+          >
+            <div class="col text-center pictures">
+              <img
+                class="img-fluid"
+                src="{{ picture.url }}"
+                alt="{{ picture.description }}"
+              />
             </div>
           </div>
         </div>
@@ -276,6 +338,21 @@
           </div>
         </div>
       </section>
+
+      <section id="accessibility" class="row" *ngIf="caseStudy.sections.accessibility">
+        <div class="col">
+          <div class="row">
+            <div class="col text-center">
+              <h2>{{ caseStudy.sections.accessibility.title }}</h2>
+              <p>
+                {{ caseStudy.sections.accessibility.content }}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <section id="style-guide" class="row">
         <div class="col">
           <div class="row">

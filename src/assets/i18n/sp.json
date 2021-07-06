@@ -7,12 +7,13 @@
   "home": {
     "greet": "¡Hola!",
     "presentation": "Soy Itzel.",
-    "subtitle": "Una desarolladora de software mexicana",
-    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+    "subtitle": "Una programadora full-stack de México.",
+    "description": "Me apasiona mejorar, disfruto experimentar con tecnologías para superarme a mi misma. Me alegra que estés aquí, ¡Échale un vistazo a todo!"
   },
   "about": {
     "title": "Mucho gusto.",
-    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis.",
+    "subtitle": "Soy una programadora full-stack, que se encuentra aprendiendo de Angular actualmente.",
+    "description": "El propósito de mi carrera es crear soluciones para la vida moderna que tengan un impacto positivo en la vida de alguien.",
     "education": "Educación",
     "educationDescription": "Universidad Autónoma de Baja California, Ingenieria en Computación. Diciembre 2019",
     "skills": "Habilidades",
@@ -20,14 +21,16 @@
   },
   "work": {
     "title": "Proyectos.",
-    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+    "description": "Estos proyectos son resultado de cursos, certificaciones o simplemente yo tratando de probarme a mí misma que puedo cumplir mis objetivos."
   },
   "contact": {
     "title": "Hablemos.",
-    "description": "Lorem ipsum en español dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi felis augue, porttitor nec sem quis."
+    "subtitle": "¿Comentarios?¿Feedback?",
+    "description": "Siéntete libre de contactarme, siempre estoy abierta a aprender algo nuevo."
   },
   "nav": {
     "about": "Sobre mi",
+    "work": "Proyectos",
     "contact": "Contacto",
     "resume": "CV",
     "readmore": "Leer más",

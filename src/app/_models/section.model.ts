@@ -70,6 +70,16 @@ export interface Section {
       }
     ];
   };
+  journey: {
+    title: string;
+    content: string;
+    pictures: [
+      {
+        url: string;
+        description: string;
+      }
+    ];
+  };
   wireframes: {
     title: string;
     content: string;
@@ -112,7 +122,10 @@ export interface Section {
       }
     ];
   };
-
+  accessibility: {
+    title: string;
+    content: string
+  };
   styleGuide: {
     title: string;
     content: string;
