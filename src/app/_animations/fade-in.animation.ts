@@ -6,9 +6,9 @@ import {
   style,
 } from '@angular/animations';
 
-export const fadeAnimation = trigger('fadeAnimation', [
-  transition('* => *', [
+export const fadeInAnimation = trigger('fadeInAnimation', [
+  transition(':enter', [
     style({ opacity: 0 }),
-    animate(1000, style({ opacity: 1 })),
+    animate("250ms  ease-in", style({ opacity: 1 })),
   ]),
 ]);

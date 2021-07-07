@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { slideInOutAnimation,fadeAnimation } from '../_animations/index';
+import { slideInOutAnimation,fadeInAnimation } from '../_animations/index';
 
 @Component({
   selector: 'contact-app',
   templateUrl: 'contact.component.html',
   styleUrls: ['../app.component.scss'],
-  animations: [fadeAnimation]
+  animations: [fadeInAnimation,slideInOutAnimation]
 
 })
 export class ContactComponent {

@@ -4,7 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CaseStudy } from '../_models/case-study.model';
 import { CaseStudyService } from '../_services/case-study.service';
 
-import { fadeAnimation, inOutAnimation } from '../_animations/index';
+import { fadeInAnimation, fadeOutAnimation,slideInOutAnimation } from '../_animations/index';
 import { Router } from '@angular/router';
 import { NavbarService } from '../_services/navbar.service';
 
@@ -12,7 +12,7 @@ import { NavbarService } from '../_services/navbar.service';
   selector: 'case-study-app',
   templateUrl: './case-study.component.html',
   styleUrls: ['../app.component.scss', './case-study.component.scss'],
-  animations: [fadeAnimation, inOutAnimation],
+  animations: [fadeInAnimation, fadeOutAnimation,slideInOutAnimation],
 })
 export class CaseStudyComponent {
   public animation = true;

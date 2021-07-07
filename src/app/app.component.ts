@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { fadeAnimation, slideInOutAnimation } from './_animations/index';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [fadeAnimation, slideInOutAnimation],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'portfolio-v2';
+  animation=true;
 
   constructor(public translate: TranslateService) {
     if (localStorage.getItem('language')) {

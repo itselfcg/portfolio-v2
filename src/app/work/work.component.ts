@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { inOutAnimation, fadeAnimation } from '../_animations/index';
+import { fadeOutAnimation, fadeInAnimation,slideInOutAnimation } from '../_animations/index';
 
 import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
@@ -11,7 +11,7 @@ import { NavbarService } from '../_services/navbar.service';
   selector: 'work-app',
   templateUrl: 'work.component.html',
   styleUrls: ['../app.component.scss', 'work.component.scss'],
-  animations: [fadeAnimation,inOutAnimation],
+  animations: [fadeInAnimation,fadeOutAnimation,slideInOutAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {
   animation = true;

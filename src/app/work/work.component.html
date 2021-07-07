@@ -1,5 +1,8 @@
-<div [@fadeAnimation]="animation ? '' : ''">
-  <div class="content" [hidden]="isLoading">
+<div [@fadeInAnimation] *ngIf="animation">
+  <div *ngIf="isLoading" [@fadeOutAnimation]>
+    <loading-app-state></loading-app-state>
+  </div>
+  <div class="content" *ngIf="!isLoading" [@slideInOutAnimation]>
     <div class="container w-75">
       <div class="row">
         <div class="col-12">
@@ -71,8 +74,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div [hidden]="!isLoading" [@inOutAnimation]>
-    <loading-app-state></loading-app-state>
   </div>
 </div>

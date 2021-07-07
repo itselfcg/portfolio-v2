@@ -1,5 +1,8 @@
-<div [@fadeAnimation]="animation ? '' : ''">
-  <div class="content" *ngIf="!isLoading">
+<div [@fadeInAnimation]="animation ? '' : ''">
+  <div *ngIf="isLoading" [@fadeOutAnimation]>
+    <loading-app-state></loading-app-state>
+  </div>
+  <div class="content" *ngIf="!isLoading" >
     <div
       class="container w-75"
       *ngIf="caseStudy.sections != null && !isLoading"
@@ -218,8 +221,6 @@
         </div>
       </section>
 
-
-
       <section id="wireframes" class="row">
         <div class="col">
           <div class="row">
@@ -245,7 +246,6 @@
           </div>
         </div>
       </section>
-
 
       <section id="usability-study" class="row">
         <div class="col">
@@ -339,7 +339,11 @@
         </div>
       </section>
 
-      <section id="accessibility" class="row" *ngIf="caseStudy.sections.accessibility">
+      <section
+        id="accessibility"
+        class="row"
+        *ngIf="caseStudy.sections.accessibility"
+      >
         <div class="col">
           <div class="row">
             <div class="col text-center">
@@ -349,7 +353,6 @@
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -379,7 +382,5 @@
       </section>
     </div>
   </div>
-  <div *ngIf="isLoading" [@inOutAnimation]>
-    <loading-app-state></loading-app-state>
-  </div>
+
 </div>

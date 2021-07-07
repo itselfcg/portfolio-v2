@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { fadeAnimation } from '../_animations/index';
+import { fadeInAnimation } from '../_animations/index';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'home-app',
   templateUrl: 'home.component.html',
   styleUrls: ['../app.component.scss','home.component.scss'],
-  animations: [fadeAnimation]
+  animations: [fadeInAnimation]
 })
 export class HomeComponent {
   animation = true;
