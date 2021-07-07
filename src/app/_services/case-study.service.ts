@@ -3,8 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-
 import { CaseStudy } from '../_models/case-study.model';
+
+import { environment } from 'src/environments/environment';
+const API_URL=environment.apiUrl+'/cases'
 
 @Injectable({ providedIn: 'root' })
 export class CaseStudyService {
@@ -15,7 +17,7 @@ export class CaseStudyService {
 
   getCaseStudy(language:string,id: string) {
     return this.http.get<{ caseStudy: CaseStudy}>
-    ('http://localhost:3000/api/cases/'+language+'/'+id, { observe: 'response' });
+    (API_URL+'/'+language+'/'+id, { observe: 'response' });
   }
 
 
