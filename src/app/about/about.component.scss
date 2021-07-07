@@ -1,0 +1,13 @@
+@import "../colors.scss";
+
+a{
+  color: $color-lg-gray;
+  transition: all 1s linear;
+  border-bottom: solid transparent 1px;
+}
+
+a:hover{
+  color: $color-green;
+  transition: all 1s linear;
+  border-bottom: solid $color-green 1px;
+}
