@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { slideInOutAnimation,fadeInAnimation } from '../_animations/index';
 
 @Component({
   selector: 'about-app',
   templateUrl: 'about.component.html',
-  styleUrls: ['../app.component.scss'],
-  animations: [fadeInAnimation,slideInOutAnimation]
+  styleUrls: ['../app.component.scss']
 })
 export class AboutComponent {
   animation = true;

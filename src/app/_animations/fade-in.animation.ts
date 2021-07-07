@@ -9,6 +9,6 @@ import {
 export const fadeInAnimation = trigger('fadeInAnimation', [
   transition(':enter', [
     style({ opacity: 0 }),
-    animate("250ms  ease-in", style({ opacity: 1 })),
+    animate("500ms  ease-in", style({ opacity: 1 })),
   ]),
 ]);
