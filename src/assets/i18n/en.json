@@ -18,12 +18,11 @@
     "educationDescription": "Universidad Autónoma de Baja California, Computer Engineering. December 2019",
     "skills": "Skills",
     "feature": "Feature"
-
   },
   "work": {
     "title": "Projects.",
-    "description": "These projects are the result of courses, certifications, or just me trying to prove to myself that I can accomplish a goal."
- ,"error":"Sorry, we couldn't find any results."
+    "description": "These projects are the result of courses, certifications, or just me trying to prove to myself that I can accomplish a goal.",
+    "error": "Sorry, we couldn't find any results."
   },
   "contact": {
     "title": "Let’t talk.",
@@ -38,7 +37,6 @@
     "readmore": "Read more",
     "view": "View",
     "return": "Back to Projects",
-    "all":"All"
-
+    "all": "All"
   }
 }
