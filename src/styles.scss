@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./colors.scss";
+$space: 2px;
+$small: 1;
+$medium: 4;
+$large: 8;
+
+.content {
+  padding: 14em 0 4em 0;
+}
+
+h1 {
+  color: $color-green;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 65px;
+  line-height: 55px;
+}
+
+h2 {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 26px;
+
+  color: $color-green;
+}
+
+h3 {
+  color: $color-lg-gray;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: $color-gray;
+}
+
+p {
+  color: $color-lg-gray;
+  font-size: 18px;
+}
+
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: $color-green !important;
+  color: $color-white !important;
+}
+
+.btn-primary {
+  color: $color-white !important;
+  background-color: $color-green !important;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.btn-secondary {
+  border: 1px solid $color-green;
+  color: $color-green !important;
+  background-color: transparent !important;
+  border-radius: 10px;
+}
+
+.btn-filter,
+.btn-filter-small {
+  background-color: $color-xs-gray;
+  border-radius: 16px;
+  color: $color-gray;
+  text-align: center;
+}
+
+.btn-filter {
+  height: 35px !important;
+
+  min-width: 70px !important;
+  letter-spacing: 0.25px;
+  font-size: 12px;
+  margin: ($space * $medium) ($space * $medium) ($space * $medium) 0;
+}
+
+.btn-filter-small {
+  height: 25px !important;
+  min-width: 50px !important;
+  font-size: 10px;
+  margin: ($space * $small) ($space * $small) ($space * $small) 0;
+}
+
+a.navlink {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: $color-gray;
+}

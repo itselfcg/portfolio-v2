@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'about-app',
   templateUrl: 'about.component.html',
-  styleUrls: ['../app.component.scss','about.component.scss']
+  styleUrls: ['about.component.scss']
 })
 export class AboutComponent {
   animation = true;

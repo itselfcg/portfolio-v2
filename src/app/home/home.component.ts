@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'home-app',
   templateUrl: 'home.component.html',
-  styleUrls: ['../app.component.scss','home.component.scss'],
+  styleUrls: ['home.component.scss'],
   animations: [fadeInAnimation]
 })
 export class HomeComponent {

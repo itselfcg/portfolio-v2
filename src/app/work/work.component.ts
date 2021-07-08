@@ -9,7 +9,7 @@ import { NavbarService } from '../_services/navbar.service';
 @Component({
   selector: 'work-app',
   templateUrl: 'work.component.html',
-  styleUrls: ['../app.component.scss', 'work.component.scss'],
+  styleUrls: ['work.component.scss'],
   animations: [fadeInAnimation, fadeOutAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {

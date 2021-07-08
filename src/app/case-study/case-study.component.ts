@@ -11,7 +11,7 @@ import { NavbarService } from '../_services/navbar.service';
 @Component({
   selector: 'case-study-app',
   templateUrl: './case-study.component.html',
-  styleUrls: ['../app.component.scss', './case-study.component.scss'],
+  styleUrls: ['./case-study.component.scss'],
   animations: [fadeInAnimation, fadeOutAnimation],
 })
 export class CaseStudyComponent {
