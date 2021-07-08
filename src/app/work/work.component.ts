@@ -10,7 +10,7 @@ import { NavbarService } from '../_services/navbar.service';
   selector: 'work-app',
   templateUrl: 'work.component.html',
   styleUrls: ['../app.component.scss', 'work.component.scss'],
-  animations: [fadeInAnimation,fadeOutAnimation],
+  animations: [fadeInAnimation, fadeOutAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {
   animation = true;
@@ -21,37 +21,40 @@ export class WorkComponent implements OnInit, OnDestroy {
   filtersSelected: string[] = [];
   isLoading = false;
 
-  constructor(public projectService: ProjectService,public nav: NavbarService ) {}
+  constructor(
+    public projectService: ProjectService,
+    public nav: NavbarService
+  ) {}
 
   ngOnInit() {
     this.nav.hide();
     this.isLoading = true;
-    this.projectService.getProjects(this.language!);
-    this.projectSub = this.projectService
-      .getPostUpdateListener()
-      .subscribe((projects: Project[]) => {
+    this.projectService.getProjects(this.language!).subscribe(
+      (result) => {
         // Assign project from service to local variable. Filter the text by laguage accordint to the actual laguange
-        this.projects = projects;
-        console.log(projects);
-        // Add project's labels to filter lists
-        for (var i = 0; i < projects.length; i++) {
-          for (var j = 0; j < projects[i].labels.length; j++) {
-            if (this.filters.indexOf(projects[i].labels[j]) == -1) {
-              this.filters.push(projects[i].labels[j]);
+
+        if (result.body !== null) {
+          this.projects = result.body.projects;
+          // Add project's labels to filter lists
+          for (var i = 0; i < this.projects.length; i++) {
+            for (var j = 0; j < this.projects[i].labels.length; j++) {
+              if (this.filters.indexOf(this.projects[i].labels[j]) == -1) {
+                this.filters.push(this.projects[i].labels[j]);
+              }
             }
           }
-        }
-
-        //Add filter all to the start of our filter list
-        this.filters.unshift('All');
-
-        setTimeout(() => {
+          //Add filter all to the start of our filter list
+          this.filters.unshift('All');
           this.nav.show();
           this.isLoading = false;
-        }, 500);
-      });
+        }
+      },
+      (err) => {
+        this.nav.show();
+        this.isLoading = false;
+      }
+    );
   }
-
 
   ngOnDestroy() {
     this.projectSub.unsubscribe();
