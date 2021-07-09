@@ -1,5 +1,8 @@
 @import '../../colors.scss';
 
+
+
+
 header {
   position: absolute;
   z-index: 99;
@@ -7,6 +10,12 @@ header {
 }
 .navbar {
   padding-top: 4rem;
+
+font-family: Roboto;
+font-weight: 300;
+font-size: 30px;
+line-height: 35px;
+
   img {
     width: 60px !important;
     height: auto;
@@ -36,3 +45,31 @@ header {
 .nav-item {
 min-width: 100px;
 }
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 991.99px) {
+  .navbar {
+    width: 75%!important;
+  }
+
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+      width: 100%;
+
+    }
+}
+
+
+
+
+
