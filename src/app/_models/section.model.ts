@@ -32,7 +32,7 @@ export interface Section {
   start: {
     title: string;
     content: string;
-    questions: string[];
+    list: string[];
     pictures: [
       {
         url: string;

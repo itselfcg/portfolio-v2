@@ -108,7 +108,7 @@
           </p>
 
           <ol>
-            <li *ngFor="let item of caseStudy.sections.start.questions">
+            <li *ngFor="let item of caseStudy.sections.start.list">
               <span>
                 {{ item }}
               </span>
@@ -136,8 +136,8 @@
                 <div class="col-5">
                   <img
                     class="w-100"
-                    src="{{ user.pictures.url }}"
-                    alt="{{ user.pictures.description }}"
+                    src="{{ user.picture.url }}"
+                    alt="{{ user.picture.description }}"
                   />
                 </div>
                 <div class="col-5">

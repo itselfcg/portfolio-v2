@@ -17,7 +17,7 @@ export class CaseStudyService {
 
   getCaseStudy(language:string,id: string) {
     return this.http.get<{ caseStudy: CaseStudy}>
-    (API_URL+'/'+language+'/'+id, { observe: 'response' });
+    (API_URL+'/project/'+id+'/'+language, { observe: 'response' });
   }
 
 

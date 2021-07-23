@@ -1,14 +1,14 @@
 import { Picture } from "./picture.model";
 
 export interface Project{
-  id:string,
+  _id:string,
   language:string,
   name:string,
   title: string,
   content: string,
-  picture: Picture,
+  pictures: Picture[],
   labels: string[],
   git_url: string,
-  details_url: string,
+  details: string,
   preview_url: string,
 }

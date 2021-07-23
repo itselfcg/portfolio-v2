@@ -33,39 +33,50 @@
         <div class="results">
           <div class="row">
             <div
-              class="col-lg-3 col-md-4 col-sm-6 col-6 mb-5"
+              class="col-lg-3 col-md-4 col-sm-6 col-6"
               *ngFor="let project of projects | projectsFilter: filtersSelected"
             >
-              <img
-                src="{{ project.picture.url }}"
-                alt="{{ project.picture.description }}"
-              />
-
-              <h4>{{ project.title }}</h4>
-              <button
-                *ngFor="let label of project.labels"
-                class="btn btn-filter-small"
-              >
-                {{ label }}
-              </button>
-              <p class="description">
-                {{ project.content }}
-              </p>
-
-              <div class="actions">
-                <a
-                  class="btn btn-primary"
-                  *ngIf="project.details_url != ''"
-                  [routerLink]="['/case-study/' + project._id]"
-                >
-                  <i class="fas fa-plus"></i> {{ "nav.readmore" | translate }}
-                </a>
-                <a class="btn btn-primary" *ngIf="project.preview_url != ''">
-                  <i class="fas fa-eye"></i> {{ "nav.view" | translate }}
-                </a>
-                <a class="btn btn-secondary" *ngIf="project.git_url != ''">
-                  <i class="fas fa-code-branch"></i> Git repo
-                </a>
+              <div class="result">
+                <div class="card-project">
+                  <mdb-carousel
+                    class="carousel slide carousel-fade"
+                    [animation]="'fade'"
+                  >
+                    <mdb-carousel-item *ngFor="let picture of project.pictures">
+                      <div class="view w-100">
+                        <img
+                          class="d-block w-100"
+                          src="{{ picture.url }}"
+                          alt="{{ picture.description }}"
+                        />
+                      </div>
+                    </mdb-carousel-item>
+                  </mdb-carousel>
+                  <h4>{{ project.title }}</h4>
+                  <button
+                    *ngFor="let label of project.labels"
+                    class="btn btn-filter-small"
+                  >
+                    {{ label }}
+                  </button>
+                  <p class="description">
+                    {{ project.content }}
+                  </p>
+                </div>
+                <div class="card-project-actions">
+                  <a
+                    class="btn btn-primary"
+                    [routerLink]="['/case-study/' + project._id]"
+                  >
+                    <i class="fas fa-plus"></i> {{ "nav.readmore" | translate }}
+                  </a>
+                  <a class="btn btn-primary" *ngIf="project.preview_url != ''">
+                    <i class="fas fa-eye"></i> {{ "nav.view" | translate }}
+                  </a>
+                  <a class="btn btn-secondary" *ngIf="project.git_url != ''">
+                    <i class="fas fa-code-branch"></i> Git repo
+                  </a>
+                </div>
               </div>
             </div>
           </div>

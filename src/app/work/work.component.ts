@@ -29,12 +29,12 @@ export class WorkComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.nav.hide();
     this.isLoading = true;
-    this.projectService.getProjects(this.language!).subscribe(
+    this.projectService.getByLanguage(this.language!).subscribe(
       (result) => {
         // Assign project from service to local variable. Filter the text by laguage accordint to the actual laguange
 
-        if (result.body !== null) {
-          this.projects = result.body.projects;
+        if (result.projects !== null) {
+          this.projects = result.projects;
           // Add project's labels to filter lists
           for (var i = 0; i < this.projects.length; i++) {
             for (var j = 0; j < this.projects[i].labels.length; j++) {
