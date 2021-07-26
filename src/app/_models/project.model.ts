@@ -10,5 +10,6 @@ export interface Project{
   labels: string[],
   git_url: string,
   details: string,
+  active:string,
   preview_url: string,
 }

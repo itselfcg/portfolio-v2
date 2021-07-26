@@ -16,7 +16,7 @@ export class ProjectService {
 
   getByLanguage(language: string) {
     return this.http.get<{ projects: Project[] }>(API_URL, {
-      params: { lang: language,observe: 'response' },
+      params: { lang: language,active:'true',observe: 'response' },
     });
   }
 }
