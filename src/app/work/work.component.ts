@@ -5,6 +5,7 @@ import { fadeOutAnimation, fadeInAnimation } from '../_animations/index';
 import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
 import { NavbarService } from '../_services/navbar.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'work-app',
@@ -20,13 +21,18 @@ export class WorkComponent implements OnInit, OnDestroy {
   filters: string[] = [];
   filtersSelected: string[] = [];
   isLoading = false;
+  allLabel = 'All';
 
   constructor(
     public projectService: ProjectService,
-    public nav: NavbarService
+    public nav: NavbarService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit() {
+    this.translate.get('nav.all').subscribe((text: string) => {
+      this.allLabel = text;
+    });
     this.nav.hide();
     this.isLoading = true;
     this.projectService.getByLanguage(this.language!).subscribe(
@@ -44,7 +50,7 @@ export class WorkComponent implements OnInit, OnDestroy {
             }
           }
           //Add filter all to the start of our filter list
-          this.filters.unshift('All');
+          this.filters.unshift(this.allLabel);
           this.nav.show();
           this.isLoading = false;
         }
@@ -76,7 +82,7 @@ export class WorkComponent implements OnInit, OnDestroy {
         return true;
       }
     } else {
-      if (value.toLowerCase() == 'all') {
+      if (value.toLowerCase() === this.allLabel) {
         return true;
       }
     }
@@ -88,7 +94,7 @@ export class WorkComponent implements OnInit, OnDestroy {
    * @param value The value to locate in the list.
    */
   selectFilter(filter: string) {
-    if (filter.toLowerCase() !== 'all') {
+    if (filter.toLowerCase() !== this.allLabel) {
       if (
         !this.filtersSelected
           .toString()
