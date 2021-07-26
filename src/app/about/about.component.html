@@ -11,10 +11,17 @@
             </p>
           </div>
         </div>
-        <a class="btn btn-primary" target="_blank"
-        href="https://docs.google.com/document/d/1HPH85UjV1OXGygrM2h3WuIlHTQrrJQErvWaIYiRHCM0/edit?usp=sharing" style="margin-right: 1rem;"> {{ "nav.resume" | translate }}  </a>
-        <a class="navlink" [routerLink]="[ '../', 'contact' ]">
-          {{ "nav.contact" | translate }} <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        <a
+          class="btn btn-primary"
+          target="_blank"
+          href="https://itzel-contreras.s3.us-east-2.amazonaws.com/resume-itzel-contreras.pdf"
+          style="margin-right: 1rem"
+        >
+          {{ "nav.resume" | translate }}
+        </a>
+        <a class="navlink" [routerLink]="['../', 'contact']">
+          {{ "nav.contact" | translate }}
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </a>
       </div>
       <div class="col-md-5 offset-md-1 col-sm-12 pt-5 pt-md-0">
@@ -42,9 +49,21 @@
           <div class="col">
             <h2>{{ "about.feature" | translate }}</h2>
             <p>
-              <a href="https://freecodecamp.org/certification/itselfcg/responsive-web-design">Responsive web design</a>,
-               <a href="https://www.coursera.org/account/accomplishments/verify/9HKVBQ8XEZVL">Front-End Web UI Frameworks and Tools: Bootstrap 4</a>,
-               <a href="https://www.coursera.org/account/accomplishments/professional-cert/M6F5MV3DWKED">Google UX Design Professional Certificate</a>
+              <a
+                target="_blank"
+                href="https://freecodecamp.org/certification/itselfcg/responsive-web-design"
+                >Responsive web design</a
+              >,
+              <a
+                target="_blank"
+                href="https://www.coursera.org/account/accomplishments/verify/9HKVBQ8XEZVL"
+                >Front-End Web UI Frameworks and Tools: Bootstrap 4</a
+              >,
+              <a
+                target="_blank"
+                href="https://www.coursera.org/account/accomplishments/professional-cert/M6F5MV3DWKED"
+                >Google UX Design Professional Certificate</a
+              >
             </p>
           </div>
         </div>
