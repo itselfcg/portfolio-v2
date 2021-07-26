@@ -3,7 +3,7 @@
     <loading-app-state></loading-app-state>
   </div>
   <div class="content" *ngIf="!isLoading" [@fadeInAnimation]>
-    <div class="container w-75" *ngIf="projects.length > 0; else noResults">
+    <div class="container w-75" *ngIf="projects && projects.length > 0; else noResults">
       <div class="row">
         <div class="col-12">
           <div class="row">

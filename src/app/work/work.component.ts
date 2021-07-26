@@ -37,19 +37,20 @@ export class WorkComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.projectService.getByLanguage(this.language!).subscribe(
       (result) => {
-        // Assign project from service to local variable. Filter the text by laguage accordint to the actual laguange
-
+        // Assign project from service to local variable. Filter the text by laguage accordint to the actual laguage
         if (result.projects !== null) {
           this.projects = result.projects;
           // Add project's labels to filter lists
-          for (var i = 0; i < this.projects.length; i++) {
-            for (var j = 0; j < this.projects[i].labels.length; j++) {
-              if (this.filters.indexOf(this.projects[i].labels[j]) == -1) {
-                this.filters.push(this.projects[i].labels[j]);
+          if (this.projects) {
+            for (var i = 0; i < this.projects.length; i++) {
+              for (var j = 0; j < this.projects[i].labels.length; j++) {
+                if (this.filters.indexOf(this.projects[i].labels[j]) == -1) {
+                  this.filters.push(this.projects[i].labels[j]);
+                }
               }
             }
+            //Add filter all to the start of our filter list
           }
-          //Add filter all to the start of our filter list
           this.filters.unshift(this.allLabel);
           this.nav.show();
           this.isLoading = false;

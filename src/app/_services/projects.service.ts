@@ -15,7 +15,8 @@ export class ProjectService {
   constructor(private http: HttpClient) {}
 
   getByLanguage(language: string) {
-    return this.http.get<{ projects: Project[] }>(API_URL, {
+    const endpoint=API_URL+'/params';
+    return this.http.get<{ projects: Project[] }>(endpoint, {
       params: { lang: language,active:'true',observe: 'response' },
     });
   }
