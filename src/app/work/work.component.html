@@ -36,7 +36,7 @@
               class="col-lg-3 col-md-4 col-sm-6 col-6"
               *ngFor="let project of projects | projectsFilter: filtersSelected"
             >
-              <div class="result">
+              <div class="result" *ngIf="project.active">
                 <div class="card-project">
                   <mdb-carousel
                     class="carousel slide carousel-fade"
@@ -64,8 +64,9 @@
                   </p>
                 </div>
                 <div class="card-project-actions">
+
                   <a
-                    class="btn btn-primary"
+                    class="btn btn-primary" *ngIf="project.details"
                     [routerLink]="['/case-study/' + project._id]"
                   >
                     <i class="fas fa-plus"></i> {{ "nav.readmore" | translate }}
