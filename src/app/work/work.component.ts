@@ -44,8 +44,8 @@ export class WorkComponent implements OnInit, OnDestroy {
           if (this.projects) {
             for (var i = 0; i < this.projects.length; i++) {
               for (var j = 0; j < this.projects[i].labels.length; j++) {
-                if (this.filters.indexOf(this.projects[i].labels[j]) == -1) {
-                  this.filters.push(this.projects[i].labels[j]);
+                if (this.filters.indexOf(this.projects[i].labels[j].trim()) === -1) {
+                  this.filters.push(this.projects[i].labels[j].trim());
                 }
               }
             }
