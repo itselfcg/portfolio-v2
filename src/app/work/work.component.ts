@@ -21,7 +21,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   filters: string[] = [];
   filtersSelected: string[] = [];
   isLoading = false;
-  allLabel = 'All';
+  allLabel = '';
 
   constructor(
     public projectService: ProjectService,
@@ -83,7 +83,9 @@ export class WorkComponent implements OnInit, OnDestroy {
         return true;
       }
     } else {
-      if (value.toLowerCase() === this.allLabel) {
+      if (value.toLowerCase() === this.allLabel.toLowerCase()) {
+        console.log(value+' '+this.allLabel);
+
         return true;
       }
     }
@@ -95,7 +97,7 @@ export class WorkComponent implements OnInit, OnDestroy {
    * @param value The value to locate in the list.
    */
   selectFilter(filter: string) {
-    if (filter.toLowerCase() !== this.allLabel) {
+    if (filter.toLowerCase() !== this.allLabel.toLowerCase()) {
       if (
         !this.filtersSelected
           .toString()
