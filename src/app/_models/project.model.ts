@@ -3,6 +3,7 @@ import { Picture } from "./picture.model";
 export interface Project{
   _id:string,
   language:string,
+  creation_date:Date,
   name:string,
   title: string,
   content: string,

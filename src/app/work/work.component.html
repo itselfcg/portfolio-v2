@@ -52,6 +52,8 @@
                       </div>
                     </mdb-carousel-item>
                   </mdb-carousel>
+                  <h5>{{ project.creation_date| date:'shortDate' }}</h5>
+
                   <h4>{{ project.title }}</h4>
                   <button
                     *ngFor="let label of project.labels"
