@@ -1,9 +1,7 @@
 @import "../../colors.scss";
 
 @media (max-width: 576px) {
-  .container {
-    width: 75% !important;
-  }
+
 
   .navbar {
     position: relative;
@@ -55,7 +53,9 @@
     transition: all 0.5s linear;
   }
 }
-
+.container {
+  width: 75% !important;
+}
 .home-color {
   background-color: transparent;
 }
