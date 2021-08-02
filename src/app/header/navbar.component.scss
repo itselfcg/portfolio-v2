@@ -1,7 +1,52 @@
-@import '../../colors.scss';
+@import "../../colors.scss";
+
+ @media (max-width: 	576px) {
+  .container {
+    width: 75% !important;
+  }
+
+  .navbar {
+    position: relative;
+    padding-top: 2rem !important;
+  }
+  .navbar-collapse {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 5;
+  }
+
+  .navbar-toggler,
+  .navbar-brand {
+    z-index: 10;
+  }
+  #nav-menu {
+    margin: 0px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .home-color {
+    background-color: $color-green!important;
+  }
+
+  .other-color {
+    background-color: white!important;
+  }
+}
 
 
 
+.home-color {
+  background-color: transparent;
+}
+
+.other-color {
+  background-color: transparent;
+}
 
 header {
   position: absolute;
@@ -10,11 +55,10 @@ header {
 }
 .navbar {
   padding-top: 4rem;
-
-font-family: Roboto;
-font-weight: 300;
-font-size: 30px;
-line-height: 35px;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 35px;
 
   img {
     width: 60px !important;
@@ -43,33 +87,6 @@ line-height: 35px;
 }
 
 .nav-item {
-min-width: 100px;
+  min-width: 100px;
 }
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 991.99px) {
-  .navbar {
-    width: 75%!important;
-  }
-
-}
-
-@media (max-width: 991.98px) {
-    .navbar {
-      width: 100%;
-
-    }
-}
-
-
-
-
 
