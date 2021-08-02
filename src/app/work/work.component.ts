@@ -22,6 +22,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   filtersSelected: string[] = [];
   isLoading = false;
   allLabel = '';
+  filterTypes: string[] = ['Name','Date'];
 
   constructor(
     public projectService: ProjectService,
@@ -51,6 +52,7 @@ export class WorkComponent implements OnInit, OnDestroy {
             }
             //Add filter all to the start of our filter list
           }
+          this.filters.sort();
           this.filters.unshift(this.allLabel);
           this.nav.show();
           this.isLoading = false;
@@ -84,8 +86,6 @@ export class WorkComponent implements OnInit, OnDestroy {
       }
     } else {
       if (value.toLowerCase() === this.allLabel.toLowerCase()) {
-        console.log(value+' '+this.allLabel);
-
         return true;
       }
     }
