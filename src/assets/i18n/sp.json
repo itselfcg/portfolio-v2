@@ -22,7 +22,12 @@
   "work": {
     "title": "Proyectos.",
     "description": "Estos proyectos son resultado de cursos, certificaciones o simplemente yo tratando de probarme a mí misma que puedo cumplir mis objetivos.",
-    "error": "Lo siento, no encontramos resultados."
+    "error": "Lo siento, no encontramos resultados.",
+    "filters":"Filtros",
+    "sort":"Ordenar por:",
+    "new_asc":"Nuevos proyectos",
+    "name_asc":"Nombre: A - Z",
+    "name_desc":"Nombre: Z - A"
   },
   "contact": {
     "title": "Hablemos.",

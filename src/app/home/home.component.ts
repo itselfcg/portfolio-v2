@@ -15,7 +15,6 @@ export class HomeComponent {
       translate.setDefaultLang(localStorage.getItem('language')!);
       translate.use(localStorage.getItem('language')!);
     } else {
-      console.log(2343);
       translate.setDefaultLang('en');
       translate.use('en');
       localStorage.setItem('language', 'en');

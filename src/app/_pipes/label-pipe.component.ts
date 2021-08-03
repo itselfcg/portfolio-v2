@@ -1,16 +1,21 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Project } from '../_models/project.model';
+import { Sort } from '../_models/sort.model';
 
 @Pipe({
-  name: 'projectsFilter',
+  name: 'labelFilter',
   pure: false,
 })
-export class ProjectsFilterPipe implements PipeTransform {
-  transform(projects: any[], filters: string[]): any {
+export class LabelFilterPipe implements PipeTransform {
+  transform(
+    projects: any[],
+    filters: string[]
+  ): any {
     if (!projects || !filters) {
       return projects;
     }
 
-    return projects.filter(
+    let filtered = projects.filter(
       (item) =>
         (filters.length > 0 &&
           filters.some((filter) =>
@@ -19,5 +24,7 @@ export class ProjectsFilterPipe implements PipeTransform {
         (filters.length == 0 &&
           item.labels.toString().toLowerCase().includes(filters))
     );
+
+    return filtered;
   }
 }

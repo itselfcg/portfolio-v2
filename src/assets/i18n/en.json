@@ -22,7 +22,13 @@
   "work": {
     "title": "Projects.",
     "description": "These projects are the result of courses, certifications, or just me trying to prove to myself that I can accomplish a goal.",
-    "error": "Sorry, we couldn't find any results."
+    "error": "Sorry, we couldn't find any results.",
+    "filters":"Filters",
+    "sort":"Sort by:",
+    "new_asc":"Newest Projects",
+    "name_asc":"Name: A to Z",
+    "name_desc":"Name: Z to A"
+
   },
   "contact": {
     "title": "Let’s talk.",

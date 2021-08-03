@@ -13,8 +13,6 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router, public nav: NavbarService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        console.log(event.urlAfterRedirects);
-
         if (event.urlAfterRedirects !== '/') {
           this.isHome = false;
         } else {

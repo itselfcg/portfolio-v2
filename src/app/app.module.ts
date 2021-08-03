@@ -3,9 +3,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import { ProjectsFilterPipe } from './_pipes/pipe.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LabelFilterPipe } from './_pipes/label-pipe.component';
 
+import { SortFilterPipe } from './_pipes/sort-pipe.component';
 
 import { AppComponent } from './app.component';
 import { WorkComponent } from './work/work.component';
@@ -16,8 +17,8 @@ import { CaseStudyComponent } from './case-study/case-study.component';
 import { LoadingComponent } from './states/loading.component';
 import { NavbarComponent } from './header/navbar.component';
 
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ProjectsFilterPipe,
+    LabelFilterPipe,
+    SortFilterPipe,
     CaseStudyComponent,
     LoadingComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
@@ -39,16 +41,16 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-  })
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);

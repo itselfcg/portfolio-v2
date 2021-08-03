@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChildren } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { fadeOutAnimation, fadeInAnimation } from '../_animations/index';
 
@@ -6,6 +6,7 @@ import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
 import { NavbarService } from '../_services/navbar.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Sort } from '../_models/sort.model';
 
 @Component({
   selector: 'work-app',
@@ -21,8 +22,21 @@ export class WorkComponent implements OnInit, OnDestroy {
   filters: string[] = [];
   filtersSelected: string[] = [];
   isLoading = false;
-  allLabel = '';
-  filterTypes: string[] = ['Name','Date'];
+  allLabel = 'All';
+  sortFilters: Sort[] = [
+    {
+      name: 'new',
+      description: 'New projects',
+      order: 'asc',
+    },
+    { name: 'name', description: 'Project name A to Z', order: 'asc' },
+    { name: 'name', description: 'Project name Z to A', order: 'desc' },
+  ];
+  sortSelected: Sort = {
+    name: this.sortFilters[0].name,
+    description: this.sortFilters[0].description,
+    order: this.sortFilters[0].order,
+  };
 
   constructor(
     public projectService: ProjectService,
@@ -33,6 +47,29 @@ export class WorkComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.translate.get('nav.all').subscribe((text: string) => {
       this.allLabel = text;
+    });
+
+    this.translate.get('work').subscribe((text: any) => {
+      for (let i = 0; i < this.sortFilters.length; i++) {
+        if (this.sortFilters[i].name === 'new') {
+          if (this.sortFilters[i].order === 'asc') {
+
+            this.sortFilters[i].description = text.new_asc;
+          }
+
+        }
+        if (this.sortFilters[i].name === 'name') {
+          if (this.sortFilters[i].order === 'asc') {
+            this.sortFilters[i].description = text.name_asc;
+          }
+          if (this.sortFilters[i].order === 'desc') {
+            this.sortFilters[i].description = text.name_desc;
+          }
+        }
+
+      }
+      this.onSelectSort(this.sortFilters[0]);
+
     });
     this.nav.hide();
     this.isLoading = true;
@@ -45,7 +82,9 @@ export class WorkComponent implements OnInit, OnDestroy {
           if (this.projects) {
             for (var i = 0; i < this.projects.length; i++) {
               for (var j = 0; j < this.projects[i].labels.length; j++) {
-                if (this.filters.indexOf(this.projects[i].labels[j].trim()) === -1) {
+                if (
+                  this.filters.indexOf(this.projects[i].labels[j].trim()) === -1
+                ) {
                   this.filters.push(this.projects[i].labels[j].trim());
                 }
               }
@@ -124,5 +163,13 @@ export class WorkComponent implements OnInit, OnDestroy {
       list.splice(index, 1);
     }
     return list;
+  }
+
+  onSelectSort(selected: Sort) {
+    this.sortSelected = {
+      name: selected.name,
+      description: selected.description,
+      order: selected.order,
+    };
   }
 }
