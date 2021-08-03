@@ -1,25 +1,23 @@
 @import "../../colors.scss";
 
 @media (max-width: 576px) {
-
-
   .navbar {
     position: relative;
-    padding-top: 2rem !important;
   }
   .navbar-collapse {
     top: 0;
     left: 0;
     position: absolute;
+    z-index: 1;
     width: 100%;
     min-height: 100vh;
-    z-index: 5;
   }
 
   .navbar-toggler,
   .navbar-brand {
-    z-index: 10;
+    z-index: 2;
   }
+
   #nav-menu {
     margin: 0px !important;
     position: absolute;
@@ -42,10 +40,14 @@
   }
 
   .collapse {
+    visibility: hidden;
+
     opacity: 0;
   }
 
   .collapse.show {
+    visibility: visible;
+
     opacity: 1;
   }
 
@@ -64,7 +66,7 @@
   background-color: transparent;
 }
 
-header {
+.navbar {
   position: absolute;
   z-index: 99;
   width: 100%;
