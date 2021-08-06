@@ -2,11 +2,9 @@
 
 
 .loading {
-  z-index: 999;
+  z-index: 100;
   min-height: 100vh;
   background-color: $color-green;
-  //background-color: transparent;
-
   background-size: cover;
   display: flex;
   justify-content: center;

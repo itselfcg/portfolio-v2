@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from '../_animations/index';
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../_services/loader.service';
+import { fadeInAnimation, fadeOutAnimation,fadeInOutAnimation } from '../_animations/index';
 
 @Component({
   selector: 'home-app',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.scss'],
-  animations: [fadeInAnimation],
+  animations: [fadeInAnimation, fadeOutAnimation,fadeInOutAnimation],
 })
 export class HomeComponent implements OnInit {
   showLoader = false;

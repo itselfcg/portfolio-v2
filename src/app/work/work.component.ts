@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChildren } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { fadeOutAnimation, fadeInAnimation } from '../_animations/index';
+import { fadeInAnimation, fadeOutAnimation,fadeInOutAnimation } from '../_animations/index';
 
 import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
@@ -12,7 +12,7 @@ import { LoaderService } from '../_services/loader.service';
   selector: 'work-app',
   templateUrl: 'work.component.html',
   styleUrls: ['work.component.scss'],
-  animations: [fadeInAnimation, fadeOutAnimation],
+  animations: [fadeInAnimation, fadeOutAnimation,fadeInOutAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {
   private projectSub: Subscription = new Subscription();

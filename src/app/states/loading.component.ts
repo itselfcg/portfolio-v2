@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { LoaderService } from '../_services/loader.service';
 import { NavbarService } from '../_services/navbar.service';
-import { fadeInAnimation, fadeOutAnimation } from '../_animations/index';
+import { fadeInAnimation, fadeOutAnimation,fadeInOutAnimation } from '../_animations/index';
 
 @Component({
   selector: 'loading-app-state',
   templateUrl: 'loading.component.html',
   styleUrls: ['loading.component.scss'],
-  animations: [fadeInAnimation],
+  animations: [fadeInAnimation, fadeOutAnimation,fadeInOutAnimation],
 
 })
 export class LoadingComponent {

@@ -4,13 +4,13 @@ import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { slideInAnimation } from './_animations/animations';
 import { LoaderService } from './_services/loader.service';
-import { fadeInAnimation, fadeOutAnimation } from './_animations/index';
+import { fadeInAnimation, fadeOutAnimation,fadeInOutAnimation } from './_animations/index';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [slideInAnimation, fadeInAnimation],
+  animations: [slideInAnimation,fadeInAnimation, fadeOutAnimation,fadeInOutAnimation],
 })
 export class AppComponent implements OnInit {
   title = 'portfolio-v2';
