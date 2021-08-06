@@ -24,11 +24,9 @@ export class CaseStudyComponent {
     public router: Router,
     public caseStudyService: CaseStudyService,
     public route: ActivatedRoute
-    ,public nav: NavbarService
   ) {}
 
   ngOnInit() {
-    this.nav.hide();
     this.isLoading = true;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('id')) {
@@ -38,10 +36,7 @@ export class CaseStudyComponent {
           (result) => {
             if (result.body != null) {
               this.caseStudy = result.body.caseStudy;
-              setTimeout(() => {
-                this.isLoading = false;
-                this.nav.show();
-              }, 500);
+              this.isLoading = false;
             }
           },
           (error) => {

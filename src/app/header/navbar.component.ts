@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { NavbarService } from '../_services/navbar.service';
+import { fadeInAnimation, fadeOutAnimation } from '../_animations/index';
 
 @Component({
   selector: 'navbar-app',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
+  animations: [fadeInAnimation],
+
 })
 export class NavbarComponent implements OnInit {
   isHome = false;
   isHomeExpanded=false;
-  constructor(private router: Router, public nav: NavbarService) {
+  showNavar=false;
+  constructor(private router: Router, public navbarService: NavbarService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (event.urlAfterRedirects !== '/') {
@@ -22,7 +26,9 @@ export class NavbarComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.nav.show();
+    this.navbarService.isNavbarShown.subscribe((isNavbarShown) => {
+      this.showNavar=isNavbarShown;
+    });
   }
 
 }
