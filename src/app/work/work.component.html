@@ -112,7 +112,7 @@
                     *ngIf="project.details"
                     [routerLink]="['/case-study/' + project._id]"
                   >
-                    <i class="fas fa-plus"></i> {{ "nav.readmore" | translate }}
+                    <i class="fas fa-plus"></i> {{ "actions.readmore" | translate }}
                   </a>
                   <a
                     [href]="project.preview_url"
@@ -120,7 +120,7 @@
                     *ngIf="project.preview_url != ''"
                     target="_blank"
                   >
-                    <i class="fas fa-eye"></i> {{ "nav.view" | translate }}
+                    <i class="fas fa-eye"></i> {{ "actions.view" | translate }}
                   </a>
                   <a
                     [href]="project.git_url"

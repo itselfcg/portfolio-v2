@@ -22,6 +22,7 @@ export class AppComponent {
       translate.use('en');
       localStorage.setItem('language', 'en');
     }
+
   }
 
   prepareRoute(outlet: RouterOutlet) {

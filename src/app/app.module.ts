@@ -19,6 +19,7 @@ import { NavbarComponent } from './header/navbar.component';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslationService } from './_services/translation.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
+        useClass: TranslationService,
+       // useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
     }),
@@ -52,6 +54,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 })
 export class AppModule {}
 
-export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }

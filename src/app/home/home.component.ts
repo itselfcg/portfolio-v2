@@ -11,19 +11,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class HomeComponent {
   animation = true;
   constructor(public translate: TranslateService) {
-    if (localStorage.getItem('language')) {
-      translate.setDefaultLang(localStorage.getItem('language')!);
-      translate.use(localStorage.getItem('language')!);
-    } else {
-      translate.setDefaultLang('en');
-      translate.use('en');
-      localStorage.setItem('language', 'en');
-    }
   }
 
   useLanguage(language: string): void {
     this.translate.use(language);
     localStorage.setItem('language', language);
-
   }
 }

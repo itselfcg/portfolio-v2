@@ -45,7 +45,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.translate.get('nav.all').subscribe((text: string) => {
+    this.translate.get('actions.all').subscribe((text: string) => {
       this.allLabel = text;
     });
 
