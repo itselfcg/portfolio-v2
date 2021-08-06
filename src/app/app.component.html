@@ -1,4 +1,10 @@
+
+
 <navbar-app></navbar-app>
+<div @fadeInOutAnimation  class="background" *ngIf="showLoader">
+  <loading-app-state ></loading-app-state>
+
+</div>
 <div [@routeAnimations]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

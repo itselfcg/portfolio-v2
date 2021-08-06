@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class NavbarService {
-  visible: boolean;
+  isNavbarShown = new BehaviorSubject<boolean>(false);
 
-  constructor() { this.visible = false; }
+  constructor() {}
 
-  hide() { this.visible = false; }
+  hideNavbar() {
+    this.isNavbarShown.next(false);
+  }
 
-  show() { this.visible = true; }
+  showNavbar() {
+    this.isNavbarShown.next(true);
 
-  toggle() { this.visible = !this.visible;
   }
 }

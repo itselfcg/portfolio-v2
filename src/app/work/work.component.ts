@@ -1,27 +1,26 @@
 import { Component, OnInit, OnDestroy, ViewChildren } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { fadeOutAnimation, fadeInAnimation } from '../_animations/index';
+import { fadeInAnimation, fadeOutAnimation,fadeInOutAnimation } from '../_animations/index';
 
 import { Project } from '../_models/project.model';
 import { ProjectService } from '../_services/projects.service';
-import { NavbarService } from '../_services/navbar.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Sort } from '../_models/sort.model';
+import { LoaderService } from '../_services/loader.service';
 
 @Component({
   selector: 'work-app',
   templateUrl: 'work.component.html',
   styleUrls: ['work.component.scss'],
-  animations: [fadeInAnimation, fadeOutAnimation],
+  animations: [fadeInAnimation, fadeOutAnimation,fadeInOutAnimation],
 })
 export class WorkComponent implements OnInit, OnDestroy {
-  animation = true;
   private projectSub: Subscription = new Subscription();
   language = localStorage.getItem('language');
   projects: Project[] = [];
   filters: string[] = [];
   filtersSelected: string[] = [];
-  isLoading = false;
+  showLoader = false;
   allLabel = 'All';
   sortFilters: Sort[] = [
     {
@@ -40,11 +39,19 @@ export class WorkComponent implements OnInit, OnDestroy {
 
   constructor(
     public projectService: ProjectService,
-    public nav: NavbarService,
-    public translate: TranslateService
-  ) {}
+    public translate: TranslateService,
+    private loaderService: LoaderService
+
+  ) {
+    this.loaderService.isLoaderShown.subscribe(
+      (isLoaderShown) => (this.showLoader = isLoaderShown)
+    );
+    this.loaderService.showLoader();
+
+  }
 
   ngOnInit() {
+
     this.translate.get('actions.all').subscribe((text: string) => {
       this.allLabel = text;
     });
@@ -71,8 +78,7 @@ export class WorkComponent implements OnInit, OnDestroy {
       this.onSelectSort(this.sortFilters[0]);
 
     });
-    this.nav.hide();
-    this.isLoading = true;
+
     this.projectService.getByLanguage(this.language!).subscribe(
       (result) => {
         // Assign project from service to local variable. Filter the text by laguage accordint to the actual laguage
@@ -93,13 +99,11 @@ export class WorkComponent implements OnInit, OnDestroy {
           }
           this.filters.sort();
           this.filters.unshift(this.allLabel);
-          this.nav.show();
-          this.isLoading = false;
+          this.loaderService.hideLoader();
         }
       },
       (err) => {
-        this.nav.show();
-        this.isLoading = false;
+        this.loaderService.hideLoader();
       }
     );
   }
