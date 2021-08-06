@@ -117,14 +117,13 @@ export class WorkComponent implements OnInit, OnDestroy {
     if (this.filtersSelected.length > 0) {
       if (
         this.filtersSelected
-          .toString()
-          .toLowerCase()
-          .includes(value.toLowerCase())
+
+          .includes(value)
       ) {
         return true;
       }
     } else {
-      if (value.toLowerCase() === this.allLabel.toLowerCase()) {
+      if (value === this.allLabel) {
         return true;
       }
     }
@@ -136,12 +135,10 @@ export class WorkComponent implements OnInit, OnDestroy {
    * @param value The value to locate in the list.
    */
   selectFilter(filter: string) {
-    if (filter.toLowerCase() !== this.allLabel.toLowerCase()) {
+    if (filter !== this.allLabel) {
       if (
         !this.filtersSelected
-          .toString()
-          .toLowerCase()
-          .includes(filter.toLowerCase())
+          .includes(filter)
       ) {
         this.filtersSelected.push(filter);
       } else {
