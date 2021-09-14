@@ -1,8 +1,10 @@
 @import "../../colors.scss";
+@import "../../fonts.scss";
 
 @media (max-width: 576px) {
   .navbar {
     position: relative;
+    
   }
   .navbar-collapse {
     top: 0;
@@ -73,7 +75,7 @@
 }
 .navbar {
   padding-top: 4rem;
-  font-family: Roboto;
+  font-family: 'Roboto', 'arial', sans-serif;
   font-weight: 300;
   font-size: 30px;
   line-height: 35px;

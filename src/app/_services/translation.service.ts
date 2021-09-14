@@ -9,7 +9,7 @@ export class TranslationService implements TranslateLoader {
   constructor(private http: HttpClient) {}
 
   getTranslation(lang: string): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/translations/${lang}`).pipe(
+    return this.http.get(`https://api.itzelcontreras.com/translations/${lang}`).pipe(
       map((response: any) => {
         return response.result;
       })
