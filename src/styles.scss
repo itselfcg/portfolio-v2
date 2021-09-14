@@ -1,4 +1,6 @@
 @import "./colors.scss";
+@import "./fonts.scss";
+
 $space: .5px;
 $small: 1;
 $medium: 4;
@@ -18,7 +20,7 @@ h1 {
 }
 
 h2 {
-  font-family: Rubik;
+  font-family: 'Roboto', 'arial', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
